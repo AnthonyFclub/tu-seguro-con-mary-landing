@@ -1,41 +1,60 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { Play } from 'lucide-react';
+import Image from 'next/image';
 
 export default function VideoSection() {
     const t = useTranslations('Video');
+    const h = useTranslations('Header');
 
     return (
         <section className="py-24 lg:py-32 bg-[#FEF3E2]/50">
             <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto text-center">
+                <div className="max-w-4xl mx-auto text-center mb-12">
                     <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                         {t('title')}
                     </h2>
-                    <p className="text-xl text-gray-600 mb-12">
+                    <p className="text-xl text-gray-600">
                         {t('subtitle')}
                     </p>
+                </div>
 
-                    <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl group cursor-pointer bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center border-8 border-white">
-                        <div className="absolute inset-0 bg-gray-900/10 group-hover:bg-gray-900/5 transition-colors" />
-
-                        {/* Play Button Overlay */}
-                        <div className="relative z-10 flex flex-col items-center gap-6">
-                            <div className="w-20 h-20 lg:w-28 lg:h-28 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                                <Play className="w-10 h-10 lg:w-14 lg:h-14 fill-current ml-1" />
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 lg:gap-12 items-center">
+                        {/* Left: Logo and Brand Text */}
+                        <div className="flex flex-col items-center lg:items-start gap-6">
+                            {/* Logo */}
+                            <div className="relative w-64 h-64 flex items-center justify-center">
+                                <Image
+                                    src="/logo.png"
+                                    alt="Tú Seguro con Mary Logo"
+                                    width={256}
+                                    height={256}
+                                    className="object-contain"
+                                />
                             </div>
-                            <div className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl">
-                                <p className="font-bold text-gray-900 lg:text-lg">
-                                    {t('placeholder')}
-                                </p>
-                                <p className="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold">
-                                    {t('embedLabel')}
+
+                            {/* Brand Text */}
+                            <div className="text-center lg:text-left">
+                                <h3 className="text-3xl lg:text-4xl font-bold text-brand-blue mb-2">
+                                    Tú Seguro con Mary
+                                </h3>
+                                <p className="text-lg lg:text-xl font-bold text-brand-gold uppercase tracking-wider">
+                                    {h('tagline')}
                                 </p>
                             </div>
                         </div>
 
-                        {/* Subtle Texture */}
-                        <div className="absolute inset-0 opacity-20 pointer-events-none"
-                            style={{ backgroundImage: 'radial-gradient(#2563EB 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+                        {/* Right: Video */}
+                        <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                            <iframe
+                                className="w-full h-full"
+                                src="https://www.youtube.com/embed/iakNXZzJbds?autoplay=1&mute=1&loop=1&playlist=iakNXZzJbds&controls=1&rel=0&modestbranding=1"
+                                title="Mary Carmen Introduction Video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
