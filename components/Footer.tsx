@@ -52,7 +52,7 @@ export default function Footer() {
                             </p>
                             <p className="flex flex-col">
                                 <span className="text-white mb-1">{t('contactInfo.email')}</span>
-                                agentmary1997@gmail.com
+                                <span className="break-all">agentmary1997@gmail.com</span>
                             </p>
                             <p className="flex flex-col">
                                 <span className="text-white mb-1">{t('contactInfo.address')}</span>

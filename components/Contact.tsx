@@ -64,7 +64,7 @@ export default function Contact() {
                                         {method.icon}
                                     </div>
                                     <p className="text-blue-200 text-sm mb-1 font-medium uppercase tracking-wider">{method.label}</p>
-                                    <p className="text-2xl font-bold mb-6">{method.value}</p>
+                                    <p className="text-xl sm:text-lg font-bold mb-6 break-all">{method.value}</p>
                                     <a
                                         href={method.href}
                                         target="_blank"
