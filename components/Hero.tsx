@@ -34,7 +34,7 @@ export default function Hero() {
             {/* Decorative Elements */}
             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-50" />
 
-            <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
+            <div className="container mx-auto px-4 py-12 lg:py-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
                     {/* Column Left: Content */}
@@ -99,26 +99,20 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    {/* Column Right: Image Placeholder */}
+                    {/* Column Right: Image */}
                     <div className="lg:col-span-5 relative animate-in fade-in zoom-in duration-1000 delay-300">
-                        <div className="relative aspect-[3/4] w-full max-w-[500px] mx-auto group">
+                        <div className="relative aspect-[3/4] w-full max-w-[450px] mx-auto group">
                             {/* Decorative Frame */}
                             <div className="absolute inset-0 border-2 border-blue-200 rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
 
-                            <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-2xl flex flex-col items-center justify-center border-4 border-white">
-                                <div className="flex flex-col items-center gap-4 p-8 text-center">
-                                    <div className="w-24 h-24 bg-blue-200 rounded-full flex items-center justify-center">
-                                        <svg className="w-12 h-12 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                                        </svg>
-                                    </div>
-                                    <p className="text-blue-800 font-bold text-xl leading-snug">
-                                        [Professional Photo - Mary Carmen]
-                                    </p>
-                                    <p className="text-blue-600/70 text-sm italic">
-                                        Image will be uploaded later by client<br />(600x800px)
-                                    </p>
-                                </div>
+                            <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-2xl border-4 border-white">
+                                <Image
+                                    src="/images/mary-carmen.jpg"
+                                    alt={t('imageAlt')}
+                                    fill
+                                    priority
+                                    className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                                />
                             </div>
                         </div>
                     </div>
