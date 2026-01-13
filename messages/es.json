@@ -1,0 +1,155 @@
+{
+    "Header": {
+        "tagline": "Protege lo que más importa",
+        "nav": {
+            "about": "Sobre Mí",
+            "services": "Servicios",
+            "testimonials": "Testimonios",
+            "contact": "Contacto"
+        },
+        "cta": "Contáctame"
+    },
+    "Hero": {
+        "badge": "Agente de Seguros Licenciada",
+        "headline": "Hola, soy Mary Carmen",
+        "subheadline": "Tu Guía de Seguros de Confianza",
+        "description": "Con más de 10 años de experiencia ayudando a familias a encontrar la cobertura de seguros adecuada, me especializo en hacer simples las decisiones complejas de seguros. Ya sea que necesites Medicare, ACA, Seguro de Vida, o Anualidades, estoy aquí para guiarte en cada paso del camino.",
+        "stats": {
+            "experience": "10+ Años de Experiencia",
+            "clients": "500+ Clientes Felices",
+            "service": "Servicio Bilingüe (EN/ES)"
+        },
+        "buttons": {
+            "contact": "Contáctame",
+            "services": "Ver Servicios"
+        },
+        "imageAlt": "Mary Carmen Chamorro - Agente de Seguros Profesional"
+    },
+    "Services": {
+        "title": "Cómo Puedo Ayudarte",
+        "subtitle": "Soluciones de seguros especializadas para tus necesidades",
+        "health": {
+            "title": "Seguros de Salud",
+            "items": [
+                "Planes de Medicare",
+                "Medicare Advantage",
+                "Suplemento de Medicare",
+                "Cuidado a Largo Plazo",
+                "Seguro de Discapacidad"
+            ]
+        },
+        "wealth": {
+            "title": "Planificación de Riqueza",
+            "items": [
+                "Planificación de Jubilación",
+                "Planificación Financiera",
+                "Estrategias de Inversión",
+                "Anualidades",
+                "Guía de IRA/401k"
+            ]
+        },
+        "legacy": {
+            "title": "Vida y Legado",
+            "items": [
+                "Seguro de Vida",
+                "Vida a Término",
+                "Vida Entera",
+                "Vida Universal",
+                "Planificación Patrimonial"
+            ]
+        }
+    },
+    "Video": {
+        "title": "Conoce a Mary Carmen",
+        "subtitle": "Mira mi introducción y aprende cómo puedo ayudarte",
+        "placeholder": "[Video Placeholder - Carga el código de inserción de YouTube/Vimeo]",
+        "embedLabel": "Futura Inserción de YouTube/Vimeo"
+    },
+    "Testimonials": {
+        "title": "Lo Que Dicen Mis Clientes",
+        "subtitle": "Historias reales de familias que he ayudado",
+        "cards": [
+            {
+                "quote": "¡Mary Carmen hizo que Medicare fuera tan fácil de entender! Se tomó el tiempo para explicar todas mis opciones en español y me ayudó a encontrar el plan perfecto. Estoy muy agradecida por su paciencia y experiencia.",
+                "name": "Rosa Martinez",
+                "detail": "Cliente de Medicare desde 2022"
+            },
+            {
+                "quote": "Estaba abrumado con las opciones de seguro de vida hasta que conocí a Mary Carmen. Escuchó las necesidades de mi familia y nos encontró una cobertura que realmente se ajusta a nuestro presupuesto. ¡Muy recomendable!",
+                "name": "Carlos Hernandez",
+                "detail": "Cliente de Seguro de Vida"
+            },
+            {
+                "quote": "Profesional, conocedora y realmente se preocupa por sus clientes. Mary Carmen ayudó a mis padres a obtener planes de Medicare Advantage y les ahorró cientos por mes. ¡Ella es la mejor!",
+                "name": "Jennifer Lopez",
+                "detail": "Cliente de cobertura familiar"
+            }
+        ]
+    },
+    "Contact": {
+        "title": "¿Listo para Comenzar?",
+        "subtitle": "Encontremos la solución de seguros perfecta para ti y tu familia",
+        "methods": {
+            "whatsapp": {
+                "label": "Llama o Envía un Texto",
+                "button": "Mensaje por WhatsApp"
+            },
+            "email": {
+                "label": "Enviarme un Correo",
+                "button": "Enviar Correo"
+            },
+            "location": {
+                "label": "Visítame",
+                "value": "[Address Placeholder], California, USA",
+                "button": "Obtener Direcciones"
+            },
+            "social": {
+                "title": "Sígueme"
+            }
+        },
+        "cta": {
+            "title": "¡Agenda una consulta gratuita hoy!",
+            "button": "Contáctame Ahora",
+            "badge": "Consulta 100% Gratuita",
+            "bottomText": "¿Listo para proteger lo que más importa? Hablemos hoy.",
+            "features": [
+                "Sin compromiso",
+                "Consulta gratuita",
+                "Servicio bilingüe"
+            ]
+        }
+    },
+    "Footer": {
+        "branding": {
+            "license": "Licencia CA #: [CA #XXXXXX]",
+            "description": "Agente de seguros licenciada especializada en Medicare, ACA, seguro de vida y planificación financiera para la comunidad hispana."
+        },
+        "quickLinks": {
+            "title": "Enlaces Rápidos",
+            "privacy": "Política de Privacidad",
+            "terms": "Términos de Servicio"
+        },
+        "contactInfo": {
+            "title": "Información de Contacto",
+            "phone": "Teléfono:",
+            "email": "Correo:",
+            "address": "Dirección:"
+        },
+        "hours": {
+            "title": "Horarios de Atención",
+            "value": "Lun-Vie 9AM-6PM, Sáb 10AM-2PM"
+        },
+        "helpNow": {
+            "title": "¿Necesitas ayuda ahora?",
+            "description": "Envíame un mensaje por WhatsApp para asistencia inmediata durante horas laborables.",
+            "button": "Mensaje a Mary"
+        },
+        "copyright": "© {year} Tú Seguro con Mary. Todos los derechos reservados.",
+        "badges": {
+            "licensed": "Licenciada en California",
+            "bilingual": "Servicio Bilingüe",
+            "experience": "Protegiendo familias desde 2015"
+        },
+        "disclaimer": "No ofrecemos todos los planes disponibles en su área. Cualquier información que proporcionemos se limita a los planes que sí ofrecemos en su área. Comuníquese con Medicare.gov o al 1-800-MEDICARE para obtener información sobre todas sus opciones."
+    }
+}

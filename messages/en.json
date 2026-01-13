@@ -1,0 +1,155 @@
+{
+  "Header": {
+    "tagline": "Protect What Matters Most",
+    "nav": {
+      "about": "About Me",
+      "services": "Services",
+      "testimonials": "Testimonials",
+      "contact": "Contact"
+    },
+    "cta": "Contact Me"
+  },
+  "Hero": {
+    "badge": "Licensed Insurance Agent",
+    "headline": "Hi, I'm Mary Carmen",
+    "subheadline": "Your Trusted Insurance Guide",
+    "description": "With over 10 years of experience helping families find the right insurance coverage, I specialize in making complex insurance decisions simple. Whether you need Medicare, ACA, Life Insurance, or Annuities, I'm here to guide you every step of the way.",
+    "stats": {
+      "experience": "10+ Years Experience",
+      "clients": "500+ Happy Clients",
+      "service": "Bilingual Service (EN/ES)"
+    },
+    "buttons": {
+      "contact": "Contact Me",
+      "services": "View Services"
+    },
+    "imageAlt": "Mary Carmen Chamorro - Professional Insurance Agent"
+  },
+  "Services": {
+    "title": "How I Can Help You",
+    "subtitle": "Specialized insurance solutions tailored to your needs",
+    "health": {
+      "title": "Health Insurance",
+      "items": [
+        "Medicare Plans",
+        "Medicare Advantage",
+        "Medicare Supplement",
+        "Long-Term Care",
+        "Disability Insurance"
+      ]
+    },
+    "wealth": {
+      "title": "Wealth Planning",
+      "items": [
+        "Retirement Planning",
+        "Financial Planning",
+        "Investment Strategies",
+        "Annuities",
+        "IRA/401k Guidance"
+      ]
+    },
+    "legacy": {
+      "title": "Life & Legacy",
+      "items": [
+        "Life Insurance",
+        "Term Life",
+        "Whole Life",
+        "Universal Life",
+        "Estate Planning"
+      ]
+    }
+  },
+  "Video": {
+    "title": "Meet Mary Carmen",
+    "subtitle": "Watch my introduction and learn how I can help you",
+    "placeholder": "[Video Placeholder - Upload YouTube/Vimeo embed code]",
+    "embedLabel": "Future YouTube/Vimeo Embed"
+  },
+  "Testimonials": {
+    "title": "What My Clients Say",
+    "subtitle": "Real stories from families I've helped",
+    "cards": [
+      {
+        "quote": "Mary Carmen made Medicare so easy to understand! She took time to explain all my options in Spanish and helped me find the perfect plan. I'm so grateful for her patience and expertise.",
+        "name": "Rosa Martinez",
+        "detail": "Medicare client since 2022"
+      },
+      {
+        "quote": "I was overwhelmed with life insurance options until I met Mary Carmen. She listened to my family's needs and found us coverage that actually fits our budget. Highly recommend!",
+        "name": "Carlos Hernandez",
+        "detail": "Life Insurance client"
+      },
+      {
+        "quote": "Professional, knowledgeable, and truly cares about her clients. Mary Carmen helped both my parents get on Medicare Advantage plans and saved them hundreds per month. She's the best!",
+        "name": "Jennifer Lopez",
+        "detail": "Family coverage client"
+      }
+    ]
+  },
+  "Contact": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Let's find the perfect insurance solution for you and your family",
+    "methods": {
+      "whatsapp": {
+        "label": "Call or Text",
+        "button": "Message on WhatsApp"
+      },
+      "email": {
+        "label": "Email Me",
+        "button": "Send Email"
+      },
+      "location": {
+        "label": "Visit Me",
+        "value": "[Address Placeholder], California, USA",
+        "button": "Get Directions"
+      },
+      "social": {
+        "title": "Follow Me"
+      }
+    },
+    "cta": {
+      "title": "Schedule a free consultation today!",
+      "button": "Contact Me Now",
+      "badge": "100% Free Consultation",
+      "bottomText": "Ready to protect what matters most? Let's talk today.",
+      "features": [
+        "No obligation",
+        "Free consultation",
+        "Bilingual service"
+      ]
+    }
+  },
+  "Footer": {
+    "branding": {
+      "license": "CA License #: [CA #XXXXXX]",
+      "description": "Licensed insurance agent specializing in Medicare, ACA, Life Insurance, and Financial Planning for the Hispanic community."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "contactInfo": {
+      "title": "Contact Info",
+      "phone": "Phone:",
+      "email": "Email:",
+      "address": "Address:"
+    },
+    "hours": {
+      "title": "Business Hours",
+      "value": "Mon-Fri 9AM-6PM, Sat 10AM-2PM"
+    },
+    "helpNow": {
+      "title": "Need Help Now?",
+      "description": "Message me on WhatsApp for immediate assistance during business hours.",
+      "button": "Message Mary"
+    },
+    "copyright": "© {year} Tú Seguro con Mary. All rights reserved.",
+    "badges": {
+      "licensed": "Licensed in California",
+      "bilingual": "Bilingual Service",
+      "experience": "Protecting Families Since 2015"
+    },
+    "disclaimer": "We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options."
+  }
+}
