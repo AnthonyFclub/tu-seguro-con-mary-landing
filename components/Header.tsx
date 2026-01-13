@@ -19,12 +19,12 @@ export default function Header() {
                 {/* Logo & Tagline */}
                 <div className="flex items-center gap-3">
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="relative w-11 h-11 flex items-center justify-center">
+                        <div className="relative w-16 h-16 flex items-center justify-center">
                             <Image
                                 src="/logo.png"
                                 alt="Logo"
-                                width={44}
-                                height={44}
+                                width={64}
+                                height={64}
                                 className="object-contain"
                             />
                         </div>
