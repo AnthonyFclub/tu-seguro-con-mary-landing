@@ -17,14 +17,14 @@ export default function Header() {
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
             <div className="container mx-auto px-4 h-20 flex items-center justify-between">
                 {/* Logo & Tagline */}
-                <div className="flex items-center gap-3">
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <div className="relative w-24 h-24 flex items-center justify-center">
+                <div className="flex items-center gap-2">
+                    <Link href="/" className="flex items-center gap-2 group">
+                        <div className="relative w-28 h-28 flex items-center justify-center">
                             <Image
                                 src="/logo.png"
                                 alt="Logo"
-                                width={96}
-                                height={96}
+                                width={112}
+                                height={112}
                                 className="object-contain"
                             />
                         </div>
