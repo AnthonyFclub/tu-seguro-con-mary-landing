@@ -20,16 +20,16 @@ export default function VideoSection() {
                 </div>
 
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-[500px_1fr] gap-8 lg:gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         {/* Left: Logo and Brand Text */}
-                        <div className="flex flex-col items-center gap-8">
+                        <div className="flex flex-col items-center justify-center gap-4">
                             {/* Logo */}
-                            <div className="relative w-[675px] h-[675px] flex items-center justify-center">
+                            <div className="relative w-full max-w-[600px] aspect-square flex items-center justify-center">
                                 <Image
                                     src="/logo.png"
                                     alt="Tú Seguro con Mary Logo"
-                                    width={675}
-                                    height={675}
+                                    width={600}
+                                    height={600}
                                     className="object-contain"
                                 />
                             </div>
