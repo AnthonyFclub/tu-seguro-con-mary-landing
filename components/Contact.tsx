@@ -38,10 +38,10 @@ export default function Contact() {
     ];
 
     return (
-        <section id="contact" className="py-24 lg:py-32 bg-[#1E3A8A] text-white overflow-hidden relative">
+        <section id="contact" className="py-24 lg:py-32 bg-brand-blue text-white overflow-hidden relative">
             {/* Abstract Background Design */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -49,7 +49,7 @@ export default function Contact() {
                     {/* Left: Content & Methods */}
                     <div className="space-y-12">
                         <div>
-                            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+                            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
                                 {t('title')}
                             </h2>
                             <p className="text-xl text-blue-100">
@@ -69,7 +69,7 @@ export default function Contact() {
                                         href={method.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-full bg-white text-blue-900 font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors shadow-md text-center inline-block"
+                                        className="w-full bg-white text-brand-blue font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors shadow-md text-center inline-block"
                                     >
                                         {method.button}
                                     </a>
@@ -79,13 +79,13 @@ export default function Contact() {
 
                         <div className="flex flex-col sm:flex-row items-center gap-12">
                             <div className="flex items-start gap-4">
-                                <div className="bg-blue-600 p-3 rounded-2xl">
+                                <div className="bg-brand-gold p-3 rounded-2xl">
                                     <MapPin className="w-6 h-6" />
                                 </div>
                                 <div>
                                     <p className="font-bold text-lg">{t('methods.location.label')}</p>
                                     <p className="text-blue-100 whitespace-pre-line">{t('methods.location.value')}</p>
-                                    <button className="text-blue-300 font-bold mt-2 hover:text-white transition-colors underline decoration-2 underline-offset-4">
+                                    <button className="text-brand-gold font-bold mt-2 hover:text-white transition-colors underline decoration-2 underline-offset-4 text-left">
                                         {t('methods.location.button')}
                                     </button>
                                 </div>
@@ -113,23 +113,23 @@ export default function Contact() {
                     {/* Right: Final CTA Box */}
                     <div className="bg-white rounded-[2.5rem] p-10 lg:p-14 text-gray-900 shadow-2xl relative">
                         {/* Top Badge */}
-                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-8 py-3 rounded-full font-bold shadow-xl">
+                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-brand-gold text-white px-8 py-3 rounded-full font-bold shadow-xl">
                             {t('cta.badge')}
                         </div>
 
                         <div className="text-center space-y-8 mt-4">
-                            <h3 className="text-3xl font-bold leading-tight">
+                            <h3 className="text-3xl font-bold leading-tight text-brand-blue">
                                 {t('cta.title')}
                             </h3>
 
-                            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl py-5 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 active:scale-95">
+                            <button className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white font-bold text-xl py-5 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 active:scale-95">
                                 {t('cta.button')}
                             </button>
 
                             <div className="flex flex-col gap-4 text-left">
                                 {[0, 1, 2].map((idx) => (
                                     <div key={idx} className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100">
-                                        <div className="bg-blue-100 p-1.5 rounded-full text-blue-600">
+                                        <div className="bg-brand-gold/10 p-1.5 rounded-full text-brand-gold">
                                             <Check className="w-4 h-4" />
                                         </div>
                                         <span className="font-semibold text-gray-700">

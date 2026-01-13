@@ -28,7 +28,7 @@ export default function Testimonials() {
     return (
         <section id="testimonials" className="py-24 lg:py-32 bg-white overflow-hidden relative">
             {/* Decorative Blob */}
-            <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-60" />
+            <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-3xl opacity-60" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">
@@ -47,10 +47,10 @@ export default function Testimonials() {
                             className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.03] flex flex-col justify-between"
                         >
                             <div>
-                                {/* 5 Blue Stars - NO YELLOW allowed */}
+                                {/* Brand Gold Stars */}
                                 <div className="flex gap-1 mb-6">
                                     {[...Array(5)].map((_, idx) => (
-                                        <Star key={idx} className="w-5 h-5 text-blue-600 fill-blue-600" />
+                                        <Star key={idx} className="w-5 h-5 text-brand-gold fill-brand-gold" />
                                     ))}
                                 </div>
 
@@ -60,12 +60,12 @@ export default function Testimonials() {
                             </div>
 
                             <div className="flex items-center gap-4 border-t border-gray-50 pt-6">
-                                <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-inner">
+                                <div className="w-12 h-12 rounded-full bg-brand-blue flex items-center justify-center text-white font-bold text-lg shadow-inner">
                                     {item.avatar}
                                 </div>
                                 <div>
                                     <p className="font-bold text-gray-900">{item.name}</p>
-                                    <p className="text-sm text-blue-600 font-medium">{item.detail}</p>
+                                    <p className="text-sm text-brand-blue font-medium">{item.detail}</p>
                                 </div>
                             </div>
                         </div>

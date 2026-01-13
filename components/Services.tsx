@@ -21,7 +21,7 @@ export default function Services() {
         },
         {
             id: 'wealth',
-            icon: <TrendingUp className="w-8 h-8 text-emerald-500" />,
+            icon: <TrendingUp className="w-8 h-8 text-brand-gold" />,
             title: t('wealth.title'),
             items: [
                 t('wealth.items.0'),
@@ -30,12 +30,12 @@ export default function Services() {
                 t('wealth.items.3'),
                 t('wealth.items.4'),
             ],
-            borderColor: 'border-emerald-500',
-            bgColor: 'bg-emerald-50/30',
+            borderColor: 'border-brand-gold',
+            bgColor: 'bg-brand-gold/10',
         },
         {
             id: 'legacy',
-            icon: <Shield className="w-8 h-8 text-blue-600" />,
+            icon: <Shield className="w-8 h-8 text-brand-blue" />,
             title: t('legacy.title'),
             items: [
                 t('legacy.items.0'),
@@ -44,8 +44,8 @@ export default function Services() {
                 t('legacy.items.3'),
                 t('legacy.items.4'),
             ],
-            borderColor: 'border-blue-600',
-            bgColor: 'bg-blue-50/30',
+            borderColor: 'border-brand-blue',
+            bgColor: 'bg-brand-blue/10',
         },
     ];
 
@@ -80,7 +80,7 @@ export default function Services() {
                             <ul className="space-y-4">
                                 {service.items.map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-3 text-gray-700">
-                                        <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${service.id === 'health' ? 'text-pink-500' : service.id === 'wealth' ? 'text-emerald-500' : 'text-blue-600'}`} />
+                                        <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${service.id === 'health' ? 'text-pink-500' : service.id === 'wealth' ? 'text-brand-gold' : 'text-brand-blue'}`} />
                                         <span className="font-medium">{item}</span>
                                     </li>
                                 ))}

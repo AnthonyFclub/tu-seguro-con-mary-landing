@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
-import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export default function Header() {
     const t = useTranslations('Header');
@@ -17,13 +17,25 @@ export default function Header() {
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
             <div className="container mx-auto px-4 h-20 flex items-center justify-between">
                 {/* Logo & Tagline */}
-                <div className="flex flex-col">
-                    <Link href="/" className="text-xl md:text-2xl font-bold text-blue-800 tracking-tight">
-                        Tú Seguro con Mary
+                <div className="flex items-center gap-3">
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-brand-gold/20 group-hover:border-brand-gold transition-colors">
+                            <Image
+                                src="/logo.jpg"
+                                alt="Logo"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-xl md:text-2xl font-bold text-brand-blue tracking-tight leading-tight">
+                                Tú Seguro con Mary
+                            </span>
+                            <span className="text-[10px] md:text-xs text-brand-gold font-bold uppercase tracking-wider">
+                                {t('tagline')}
+                            </span>
+                        </div>
                     </Link>
-                    <span className="text-[10px] md:text-xs text-gray-500 font-medium">
-                        {t('tagline')}
-                    </span>
                 </div>
 
                 {/* Desktop Navigation */}
@@ -44,7 +56,7 @@ export default function Header() {
                     <LanguageSwitcher />
                     <Link
                         href="#contact"
-                        className="hidden sm:inline-flex bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95"
+                        className="hidden sm:inline-flex bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95"
                     >
                         {t('cta')}
                     </Link>

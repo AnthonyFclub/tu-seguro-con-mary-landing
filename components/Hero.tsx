@@ -39,16 +39,16 @@ export default function Hero() {
 
                     {/* Column Left: Content */}
                     <div className="lg:col-span-7 space-y-8 animate-in fade-in slide-in-from-left duration-1000">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-bold shadow-sm">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold/10 text-brand-gold text-sm font-bold shadow-sm">
                             <CheckCircle2 className="w-4 h-4" />
                             {t('badge')}
                         </div>
 
                         <div className="space-y-4">
-                            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                            <h1 className="text-5xl lg:text-7xl font-bold text-brand-blue leading-tight">
                                 {t('headline')}
                             </h1>
-                            <h2 className="text-2xl lg:text-3xl font-medium text-blue-600">
+                            <h2 className="text-2xl lg:text-3xl font-medium text-brand-gold">
                                 {t('subheadline')}
                             </h2>
                             <p className="text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
@@ -59,8 +59,8 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-wrap gap-4">
                             {stats.map((stat, i) => (
-                                <div key={i} className="flex items-center gap-2 px-4 py-3 bg-white rounded-xl shadow-sm border border-blue-100/50">
-                                    <span className="text-blue-600">{stat.icon}</span>
+                                <div key={i} className="flex items-center gap-2 px-4 py-3 bg-white rounded-xl shadow-sm border border-brand-gold/20">
+                                    <span className="text-brand-gold">{stat.icon}</span>
                                     <span className="text-sm font-semibold text-gray-700">{stat.label}</span>
                                 </div>
                             ))}
@@ -70,13 +70,13 @@ export default function Hero() {
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Link
                                 href="#contact"
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95"
+                                className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95"
                             >
                                 {t('buttons.contact')}
                             </Link>
                             <Link
                                 href="#services"
-                                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-bold text-lg transition-all active:scale-95"
+                                className="border-2 border-brand-gold text-brand-gold hover:bg-brand-gold/5 px-8 py-4 rounded-xl font-bold text-lg transition-all active:scale-95"
                             >
                                 {t('buttons.services')}
                             </Link>
@@ -103,7 +103,7 @@ export default function Hero() {
                     <div className="lg:col-span-5 relative animate-in fade-in zoom-in duration-1000 delay-300">
                         <div className="relative aspect-[3/4] w-full max-w-[450px] mx-auto group">
                             {/* Decorative Frame */}
-                            <div className="absolute inset-0 border-2 border-blue-200 rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
+                            <div className="absolute inset-0 border-2 border-brand-gold/30 rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
 
                             <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-2xl border-4 border-white">
                                 <Image

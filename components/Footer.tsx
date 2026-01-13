@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
+import Image from 'next/image';
 
 export default function Footer() {
     const t = useTranslations('Footer');
@@ -14,15 +15,20 @@ export default function Footer() {
 
                     {/* Column 1: Branding */}
                     <div className="lg:col-span-1.5 space-y-6">
-                        <div>
-                            <p className="text-2xl font-bold text-white mb-1">Tú Seguro con Mary</p>
-                            <p className="text-sm text-blue-400 font-medium uppercase tracking-widest">{h('tagline')}</p>
+                        <div className="flex items-center gap-3">
+                            <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-white/10">
+                                <Image src="/logo.jpg" alt="Logo" fill className="object-cover" />
+                            </div>
+                            <div>
+                                <p className="text-xl font-bold text-white mb-0.5">Tú Seguro con Mary</p>
+                                <p className="text-[10px] text-brand-gold font-bold uppercase tracking-widest">{h('tagline')}</p>
+                            </div>
                         </div>
                         <p className="text-sm leading-relaxed max-w-sm">
                             {t('branding.description')}
                         </p>
                         <div className="pt-2">
-                            <span className="inline-block bg-white/5 px-4 py-2 rounded-lg text-xs font-mono text-gray-300">
+                            <span className="inline-block bg-white/5 px-4 py-2 rounded-lg text-xs font-mono text-gray-300 border border-white/5">
                                 {t('branding.license')}
                             </span>
                         </div>
@@ -93,7 +99,7 @@ export default function Footer() {
                         <p className="text-xs font-medium">
                             {t('copyright', { year: currentYear })}
                         </p>
-                        <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest">
+                        <div className="flex flex-wrap gap-x-8 gap-y-4 text-[10px] font-bold uppercase tracking-widest text-brand-gold/80">
                             <span>{t('badges.licensed')}</span>
                             <span>{t('badges.bilingual')}</span>
                             <span>{t('badges.experience')}</span>
