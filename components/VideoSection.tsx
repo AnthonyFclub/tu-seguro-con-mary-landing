@@ -24,12 +24,12 @@ export default function VideoSection() {
                         {/* Left: Logo and Brand Text */}
                         <div className="flex flex-col items-center gap-8">
                             {/* Logo */}
-                            <div className="relative w-[450px] h-[450px] flex items-center justify-center">
+                            <div className="relative w-[675px] h-[675px] flex items-center justify-center">
                                 <Image
                                     src="/logo.png"
                                     alt="Tú Seguro con Mary Logo"
-                                    width={450}
-                                    height={450}
+                                    width={675}
+                                    height={675}
                                     className="object-contain"
                                 />
                             </div>
