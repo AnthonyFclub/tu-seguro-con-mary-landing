@@ -15,9 +15,9 @@ export default function Footer() {
 
                     {/* Column 1: Branding */}
                     <div className="lg:col-span-1.5 space-y-6">
-                        <div className="flex items-center gap-2">
-                            <div className="relative w-22 h-22 flex items-center justify-center">
-                                <Image src="/logo.png" alt="Logo" width={88} height={88} className="object-contain" />
+                        <div className="flex items-center gap-1">
+                            <div className="relative w-24 h-24 flex items-center justify-center">
+                                <Image src="/logo.png" alt="Logo" width={96} height={96} className="object-contain" />
                             </div>
                             <div>
                                 <p className="text-xl font-bold text-white mb-0.5">Tú Seguro con Mary</p>
