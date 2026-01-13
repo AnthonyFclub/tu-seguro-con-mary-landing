@@ -2,10 +2,94 @@
 
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+
+declare global {
+    interface Window {
+        onYouTubeIframeAPIReady: () => void;
+        YT: any;
+    }
+}
 
 export default function VideoSection() {
     const t = useTranslations('Video');
     const h = useTranslations('Header');
+    const playerRef = useRef<any>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [isApiLoaded, setIsApiLoaded] = useState(false);
+
+    useEffect(() => {
+        // Load YouTube IFrame API script
+        if (!window.YT) {
+            const tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+            window.onYouTubeIframeAPIReady = () => {
+                setIsApiLoaded(true);
+            };
+        } else {
+            setIsApiLoaded(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (!isApiLoaded || !containerRef.current) return;
+
+        const videoId = 'iakNXZzJbds';
+
+        // Initialize Player
+        const player = new window.YT.Player('youtube-player', {
+            videoId: videoId,
+            playerVars: {
+                autoplay: 0,
+                mute: 1, // Start muted to satisfy autoplay policies
+                loop: 1,
+                playlist: videoId,
+                controls: 1,
+                rel: 0,
+                modestbranding: 1,
+            },
+            events: {
+                onReady: (event: any) => {
+                    playerRef.current = event.target;
+                },
+            },
+        });
+
+        // Intersection Observer logic
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (playerRef.current) {
+                            playerRef.current.playVideo();
+                            playerRef.current.unMute();
+                        }
+                    } else {
+                        if (playerRef.current) {
+                            playerRef.current.pauseVideo();
+                        }
+                    }
+                });
+            },
+            { threshold: 0.5 } // Play when 50% visible
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => {
+            if (player && typeof player.destroy === 'function') {
+                player.destroy();
+            }
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
+            }
+        };
+    }, [isApiLoaded]);
 
     return (
         <section className="py-24 lg:py-32 bg-[#FEF3E2]/50">
@@ -46,14 +130,11 @@ export default function VideoSection() {
                         </div>
 
                         {/* Right: Video (takes more space) */}
-                        <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                            <iframe
-                                className="w-full h-full"
-                                src="https://www.youtube.com/embed/iakNXZzJbds?autoplay=1&mute=0&loop=1&playlist=iakNXZzJbds&controls=1&rel=0&modestbranding=1"
-                                title="Mary Carmen Introduction Video"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+                        <div
+                            ref={containerRef}
+                            className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-black"
+                        >
+                            <div id="youtube-player" className="w-full h-full" />
                         </div>
                     </div>
                 </div>
