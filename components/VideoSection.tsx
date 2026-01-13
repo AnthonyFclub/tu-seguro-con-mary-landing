@@ -49,7 +49,7 @@ export default function VideoSection() {
                         <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                             <iframe
                                 className="w-full h-full"
-                                src="https://www.youtube.com/embed/iakNXZzJbds?autoplay=1&mute=1&loop=1&playlist=iakNXZzJbds&controls=1&rel=0&modestbranding=1"
+                                src="https://www.youtube.com/embed/iakNXZzJbds?autoplay=1&mute=0&loop=1&playlist=iakNXZzJbds&controls=1&rel=0&modestbranding=1"
                                 title="Mary Carmen Introduction Video"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
