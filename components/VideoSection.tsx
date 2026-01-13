@@ -20,26 +20,26 @@ export default function VideoSection() {
                 </div>
 
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 lg:gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-[500px_1fr] gap-8 lg:gap-12 items-center">
                         {/* Left: Logo and Brand Text */}
-                        <div className="flex flex-col items-center lg:items-start gap-6">
+                        <div className="flex flex-col items-center gap-8">
                             {/* Logo */}
-                            <div className="relative w-64 h-64 flex items-center justify-center">
+                            <div className="relative w-[450px] h-[450px] flex items-center justify-center">
                                 <Image
                                     src="/logo.png"
                                     alt="Tú Seguro con Mary Logo"
-                                    width={256}
-                                    height={256}
+                                    width={450}
+                                    height={450}
                                     className="object-contain"
                                 />
                             </div>
 
                             {/* Brand Text */}
-                            <div className="text-center lg:text-left">
-                                <h3 className="text-3xl lg:text-4xl font-bold text-brand-blue mb-2">
+                            <div className="text-center">
+                                <h3 className="text-4xl lg:text-5xl font-bold text-brand-blue mb-2">
                                     Tú Seguro con Mary
                                 </h3>
-                                <p className="text-lg lg:text-xl font-bold text-brand-gold uppercase tracking-wider">
+                                <p className="text-xl lg:text-2xl font-bold text-brand-gold uppercase tracking-wider">
                                     {h('tagline')}
                                 </p>
                             </div>
