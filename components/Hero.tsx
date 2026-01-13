@@ -75,13 +75,16 @@ export default function Hero() {
                         {/* Quick Socials */}
                         <div className="flex items-center gap-4 pt-6">
                             {socialIcons.map((social, i) => (
-                                <button
+                                <a
                                     key={i}
-                                    className={`${social.color} p-3 rounded-full text-white shadow-md hover:scale-110 transition-transform active:scale-90`}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${social.color} p-3 rounded-full text-white shadow-md hover:scale-110 transition-transform active:scale-90 flex items-center justify-center`}
                                     title={social.label}
                                 >
                                     {social.icon}
-                                </button>
+                                </a>
                             ))}
                         </div>
                     </div>
