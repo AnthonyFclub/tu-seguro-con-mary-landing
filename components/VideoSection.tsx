@@ -22,7 +22,7 @@ export default function VideoSection() {
                 <div className="max-w-[1600px] mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 items-center">
                         {/* Left: Logo and Brand Text */}
-                        <div className="flex flex-col items-center justify-center gap-6 px-4">
+                        <div className="flex flex-col items-center justify-center gap-3 px-4">
                             {/* Logo */}
                             <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
                                 <Image
@@ -36,10 +36,10 @@ export default function VideoSection() {
 
                             {/* Brand Text */}
                             <div className="text-center">
-                                <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-blue mb-2">
+                                <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-brand-blue mb-1">
                                     Tú Seguro con Mary
                                 </h3>
-                                <p className="text-lg lg:text-xl xl:text-2xl font-bold text-brand-gold uppercase tracking-wider">
+                                <p className="text-sm lg:text-base xl:text-lg font-bold text-brand-gold uppercase tracking-wider">
                                     {h('tagline')}
                                 </p>
                             </div>
