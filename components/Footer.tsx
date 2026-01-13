@@ -48,11 +48,11 @@ export default function Footer() {
                         <div className="space-y-4 text-sm font-medium">
                             <p className="flex flex-col">
                                 <span className="text-white mb-1">{t('contactInfo.phone')}</span>
-                                [555-123-4567]
+                                +1 (818) 612-8196
                             </p>
                             <p className="flex flex-col">
                                 <span className="text-white mb-1">{t('contactInfo.email')}</span>
-                                info@tuseguroconmary.com
+                                agentmary1997@gmail.com
                             </p>
                             <p className="flex flex-col">
                                 <span className="text-white mb-1">{t('contactInfo.address')}</span>
@@ -70,9 +70,14 @@ export default function Footer() {
                         <div className="bg-blue-600/10 border border-blue-500/20 p-6 rounded-2xl">
                             <p className="text-blue-300 font-bold mb-2">{t('helpNow.title')}</p>
                             <p className="text-xs text-blue-100/70 mb-4 font-medium italic">{t('helpNow.description')}</p>
-                            <button className="w-full bg-[#25D366] text-white py-2 rounded-xl text-sm font-bold shadow-lg hover:shadow-xl transition-all">
+                            <a
+                                href="https://wa.me/18186128196"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full bg-[#25D366] text-white py-2 rounded-xl text-sm font-bold shadow-lg hover:shadow-xl transition-all text-center inline-block"
+                            >
                                 {t('helpNow.button')}
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

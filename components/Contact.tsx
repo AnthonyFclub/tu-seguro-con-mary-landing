@@ -8,16 +8,18 @@ export default function Contact() {
         {
             icon: <MessageCircle className="w-6 h-6" />,
             label: t('methods.whatsapp.label'),
-            value: '[555-123-4567]',
+            value: '+1 (818) 612-8196',
             button: t('methods.whatsapp.button'),
             color: 'bg-[#25D366]',
+            href: 'https://wa.me/18186128196',
         },
         {
             icon: <Mail className="w-6 h-6" />,
             label: t('methods.email.label'),
-            value: 'info@t–useguroconmary.com',
+            value: 'agentmary1997@gmail.com',
             button: t('methods.email.button'),
             color: 'bg-blue-600',
+            href: 'mailto:agentmary1997@gmail.com',
         },
     ];
 
@@ -63,9 +65,14 @@ export default function Contact() {
                                     </div>
                                     <p className="text-blue-200 text-sm mb-1 font-medium uppercase tracking-wider">{method.label}</p>
                                     <p className="text-2xl font-bold mb-6">{method.value}</p>
-                                    <button className="w-full bg-white text-blue-900 font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors shadow-md">
+                                    <a
+                                        href={method.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full bg-white text-blue-900 font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors shadow-md text-center inline-block"
+                                    >
                                         {method.button}
-                                    </button>
+                                    </a>
                                 </div>
                             ))}
                         </div>
