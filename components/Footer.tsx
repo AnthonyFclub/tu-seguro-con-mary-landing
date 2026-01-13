@@ -16,8 +16,8 @@ export default function Footer() {
                     {/* Column 1: Branding */}
                     <div className="lg:col-span-1.5 space-y-6">
                         <div className="flex items-center gap-3">
-                            <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-white/10">
-                                <Image src="/logo.jpg" alt="Logo" fill className="object-cover" />
+                            <div className="relative w-10 h-10 flex items-center justify-center">
+                                <Image src="/logo.png" alt="Logo" width={40} height={40} className="object-contain" />
                             </div>
                             <div>
                                 <p className="text-xl font-bold text-white mb-0.5">Tú Seguro con Mary</p>
