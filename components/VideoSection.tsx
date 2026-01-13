@@ -22,7 +22,7 @@ export default function VideoSection() {
                 <div className="max-w-[1600px] mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 items-center">
                         {/* Left: Logo and Brand Text */}
-                        <div className="flex flex-col items-center justify-center gap-3 px-4">
+                        <div className="flex flex-col items-center justify-center gap-0 px-4">
                             {/* Logo */}
                             <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
                                 <Image
@@ -35,7 +35,7 @@ export default function VideoSection() {
                             </div>
 
                             {/* Brand Text */}
-                            <div className="text-center">
+                            <div className="text-center -mt-8">
                                 <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-brand-blue mb-1">
                                     Tú Seguro con Mary
                                 </h3>
