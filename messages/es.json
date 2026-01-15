@@ -53,7 +53,7 @@
         }
     },
     "Video": {
-        "title": "Conoce a Mary",
+        "title": "¡Conoce a Mary!",
         "subtitle": "Mira mi introducción y aprende cómo puedo ayudarte",
         "placeholder": "[Video Placeholder - Carga el código de inserción de YouTube/Vimeo]",
         "embedLabel": "Futura Inserción de YouTube/Vimeo"
@@ -65,7 +65,7 @@
             {
                 "quote": "¡Mary hizo que Medicare fuera tan fácil de entender! Se tomó el tiempo para explicar todas mis opciones en español y me ayudó a encontrar el plan perfecto. Estoy muy agradecida por su paciencia y experiencia.",
                 "name": "Rosa Martinez",
-                "detail": "Cliente de Medicare desde 2022"
+                "detail": "Cliente de Medicare"
             },
             {
                 "quote": "Estaba abrumado con las opciones de seguro de vida hasta que conocí a Mary. Escuchó las necesidades de mi familia y nos encontró una cobertura que realmente se ajusta a nuestro presupuesto. ¡Muy recomendable!",
@@ -74,7 +74,7 @@
             },
             {
                 "quote": "Profesional, conocedora y realmente se preocupa por sus clientes. Mary ayudó a mis padres a obtener planes de Medicare Advantage y les ahorró cientos por mes. ¡Ella es la mejor!",
-                "name": "Jennifer Lopez",
+                "name": "Griselda Orozco",
                 "detail": "Cliente de cobertura familiar"
             }
         ]

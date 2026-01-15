@@ -26,46 +26,53 @@ export default function Testimonials() {
     ];
 
     return (
-        <section id="testimonials" className="py-24 lg:py-32 bg-white overflow-hidden relative">
-            {/* Decorative Blob */}
-            <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-3xl opacity-60" />
-
+        <section
+            id="testimonials"
+            className="py-24 lg:py-32 relative overflow-hidden bg-center bg-no-repeat"
+            style={{
+                backgroundImage: 'url("/images/hero-bg-pastel-cubes.png")',
+                backgroundSize: '100% 100%',
+                backgroundRepeat: 'no-repeat'
+            }}
+        >
             <div className="container mx-auto px-4 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                        {t('title')}
-                    </h2>
-                    <p className="text-xl text-gray-600">
-                        {t('subtitle')}
-                    </p>
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <div className="bg-white/10 backdrop-blur-xl p-6 lg:p-8 rounded-[2.5rem] border border-white/20 shadow-xl space-y-2">
+                        <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
+                            {t('title')}
+                        </h2>
+                        <p className="text-lg lg:text-xl text-slate-800 font-bold font-serif drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
+                            {t('subtitle')}
+                        </p>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {testimonials.map((item, i) => (
                         <div
                             key={i}
-                            className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.03] flex flex-col justify-between"
+                            className="bg-white/35 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/30 shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:scale-[1.03] flex flex-col justify-between group"
                         >
                             <div>
                                 {/* Brand Gold Stars */}
                                 <div className="flex gap-1 mb-6">
                                     {[...Array(5)].map((_, idx) => (
-                                        <Star key={idx} className="w-5 h-5 text-brand-gold fill-brand-gold" />
+                                        <Star key={idx} className="w-5 h-5 text-brand-gold fill-brand-gold drop-shadow-sm" />
                                     ))}
                                 </div>
 
-                                <blockquote className="text-gray-700 text-lg leading-relaxed italic mb-8">
+                                <blockquote className="text-slate-900 text-lg lg:text-xl leading-relaxed font-bold italic mb-8 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
                                     "{item.quote}"
                                 </blockquote>
                             </div>
 
-                            <div className="flex items-center gap-4 border-t border-gray-50 pt-6">
-                                <div className="w-12 h-12 rounded-full bg-brand-blue flex items-center justify-center text-white font-bold text-lg shadow-inner">
-                                    {item.avatar}
+                            <div className="flex items-center gap-4 border-t border-white/20 pt-6">
+                                <div className="w-14 h-14 rounded-full bg-brand-blue flex items-center justify-center text-white font-bold text-xl shadow-xl group-hover:scale-110 transition-transform">
+                                    {i === 2 ? 'G' : item.avatar}
                                 </div>
                                 <div>
-                                    <p className="font-bold text-gray-900">{item.name}</p>
-                                    <p className="text-sm text-brand-blue font-medium">{item.detail}</p>
+                                    <p className="font-extrabold text-slate-900 text-lg drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">{item.name}</p>
+                                    <p className="text-sm lg:text-base text-brand-blue font-bold opacity-90">{item.detail}</p>
                                 </div>
                             </div>
                         </div>

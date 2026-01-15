@@ -108,53 +108,54 @@ export default function VideoSection() {
 
     return (
         <section
-            className="py-24 lg:py-32 relative overflow-hidden bg-center bg-no-repeat"
+            className="py-16 lg:py-24 min-h-[85vh] flex items-center relative overflow-hidden bg-center bg-no-repeat"
             style={{
-                backgroundImage: 'url("/images/section-bg-2.png")',
+                backgroundImage: 'url("/images/hero-bg-pastel-cubes.png")',
                 backgroundSize: '100% 100%',
                 backgroundRepeat: 'no-repeat'
             }}
         >
-            <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto text-center mb-12">
-                    <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
-                        {t('title')}
-                    </h2>
-                    <p className="text-xl text-white font-medium drop-shadow-md">
-                        {t('subtitle')}
-                    </p>
+            <div className="container mx-auto px-4 relative z-10">
+                {/* Refined Header - Crystal Title */}
+                <div className="max-w-md mx-auto text-center mb-10">
+                    <div className="bg-white/10 backdrop-blur-xl p-5 rounded-[2.5rem] border border-white/20 shadow-xl">
+                        <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
+                            {t('title')}
+                        </h2>
+                    </div>
                 </div>
 
-                <div className="max-w-[1600px] mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 items-center">
-                        {/* Left: Logo and Brand Text */}
-                        <div className="flex flex-col items-center justify-center gap-0 px-4">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center">
+                        {/* Left: Brand Crystal Panel */}
+                        <div className="bg-white/10 backdrop-blur-xl p-8 lg:p-12 rounded-[3.5rem] border border-white/20 shadow-2xl flex flex-col items-center justify-center text-center">
                             {/* Logo */}
-                            <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
+                            <div className="relative w-full max-w-[320px] aspect-square flex items-center justify-center mb-6">
                                 <Image
                                     src="/logo.png"
                                     alt="Tú Seguro con Mary Logo"
-                                    width={500}
-                                    height={500}
-                                    className="object-contain w-full h-full"
+                                    width={320}
+                                    height={320}
+                                    className="object-contain w-full h-full drop-shadow-2xl"
                                 />
                             </div>
 
                             {/* Brand Text */}
-                            <div className="text-center -mt-8 bg-black/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-xl">
-                                <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1 drop-shadow-md">
+                            <div className="space-y-4">
+                                <h3 className="text-2xl lg:text-4xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-sm">
                                     Tú Seguro con Mary
                                 </h3>
-                                <p className="text-sm lg:text-base xl:text-lg font-bold text-brand-gold uppercase tracking-wider drop-shadow-sm">
+                                <div className="h-1.5 w-24 bg-brand-gold/60 mx-auto rounded-full" />
+                                <p className="text-sm lg:text-lg font-bold text-brand-gold uppercase tracking-[0.15em] drop-shadow-sm">
                                     PROTECT WHAT MATTERS MOST
                                 </p>
                             </div>
                         </div>
 
-                        {/* Right: Video (takes more space) */}
+                        {/* Right: Larger Video Container for Balance */}
                         <div
                             ref={containerRef}
-                            className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-black"
+                            className="relative aspect-video w-full rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.5)] border-4 border-white bg-black transform hover:scale-[1.01] transition-transform duration-500"
                         >
                             <div id="youtube-player" className="w-full h-full" />
                         </div>

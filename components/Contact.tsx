@@ -47,22 +47,22 @@ export default function Contact() {
                 backgroundRepeat: 'no-repeat'
             }}
         >
-            {/* Minimal Overlay for Maximum Transparency */}
-            <div className="absolute inset-0 bg-slate-950/5" />
+            {/* Light Overlay for Contrast */}
+            <div className="absolute inset-0 bg-white/10" />
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Main Unified Container - Extreme transparency */}
                 <div className="max-w-6xl mx-auto">
-                    <div className="bg-white/[0.02] backdrop-blur-md rounded-[3rem] border border-white/20 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.3)] overflow-hidden">
+                    <div className="bg-white/40 backdrop-blur-xl rounded-[3rem] border border-white/40 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.2)] overflow-hidden">
                         <div className="grid grid-cols-1 lg:grid-cols-12">
 
                             {/* Left Side: Contact Information */}
                             <div className="lg:col-span-7 p-8 lg:p-16 space-y-12">
                                 <div>
-                                    <h2 className="text-4xl lg:text-6xl font-extrabold mb-6 text-stone-100 font-serif drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+                                    <h2 className="text-4xl lg:text-6xl font-extrabold mb-6 text-slate-900 font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">
                                         {t('title')}
                                     </h2>
-                                    <p className="text-xl text-stone-100/90 font-serif max-w-lg drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+                                    <p className="text-xl text-slate-800 font-serif max-w-lg drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)]">
                                         {t('subtitle')}
                                     </p>
                                 </div>
@@ -76,12 +76,12 @@ export default function Contact() {
                                                 </div>
                                             </div>
                                             <p className="text-brand-gold font-bold text-[10px] mb-2 uppercase tracking-[0.2em] drop-shadow-sm">{method.label}</p>
-                                            <p className="text-lg lg:text-xl font-bold mb-6 text-stone-100 break-all leading-tight drop-shadow-md">{method.value}</p>
+                                            <p className="text-lg lg:text-xl font-bold mb-6 text-slate-900 break-all leading-tight drop-shadow-sm">{method.value}</p>
                                             <a
                                                 href={method.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="w-full bg-white/10 hover:bg-white text-white hover:text-slate-900 font-bold py-3 px-4 rounded-xl transition-all text-center inline-block text-sm border border-white/20"
+                                                className="w-full bg-slate-900/10 hover:bg-slate-900 text-slate-900 hover:text-white font-bold py-3 px-4 rounded-xl transition-all text-center inline-block text-sm border border-slate-900/10"
                                             >
                                                 {method.button}
                                             </a>
@@ -97,7 +97,7 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <p className="font-bold text-stone-400 uppercase tracking-widest text-[9px] mb-0.5">{t('methods.location.label')}</p>
-                                            <p className="text-stone-100 text-lg font-bold drop-shadow-sm">{t('methods.location.value')}</p>
+                                            <p className="text-slate-900 text-lg font-bold drop-shadow-sm">{t('methods.location.value')}</p>
                                         </div>
                                     </div>
 
@@ -110,7 +110,7 @@ export default function Contact() {
                                                     href={social.href}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className={`text-white/60 ${social.color} transition-all transform hover:scale-125`}
+                                                    className={`text-slate-900/60 ${social.color} transition-all transform hover:scale-125`}
                                                 >
                                                     <div className="w-5 h-5">{social.icon}</div>
                                                 </a>
@@ -128,7 +128,7 @@ export default function Contact() {
                                 </div>
 
                                 <div className="text-center space-y-10 relative z-10">
-                                    <h3 className="text-3xl lg:text-4xl font-extrabold leading-tight font-serif text-stone-100 drop-shadow-lg">
+                                    <h3 className="text-3xl lg:text-4xl font-extrabold leading-tight font-serif text-slate-900 drop-shadow-sm">
                                         {t('cta.title')}
                                     </h3>
 
@@ -143,7 +143,7 @@ export default function Contact() {
                                                 <div className="bg-brand-gold/20 p-1.5 rounded-full text-brand-gold">
                                                     <Check className="w-4 h-4" />
                                                 </div>
-                                                <span className="font-semibold text-stone-200 text-sm drop-shadow-sm">
+                                                <span className="font-semibold text-slate-800 text-sm drop-shadow-sm">
                                                     {t(`cta.features.${idx}`)}
                                                 </span>
                                             </div>
