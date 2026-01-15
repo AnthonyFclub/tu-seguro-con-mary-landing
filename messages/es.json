@@ -11,11 +11,11 @@
     },
     "Hero": {
         "badge": "Agente de Seguros Licenciada",
-        "headline": "Hola, soy Mary Carmen",
+        "headline": "Hola, soy Mary",
         "subheadline": "Tu Guía de Seguros de Confianza",
-        "description": "Con más de 10 años de experiencia ayudando a familias a encontrar la cobertura de seguros adecuada, me especializo en hacer simples las decisiones complejas de seguros. Ya sea que necesites Medicare, ACA, Seguro de Vida, o Anualidades, estoy aquí para guiarte en cada paso del camino.",
+        "description": "Con más de 20 años de experiencia ayudando a familias a encontrar la cobertura de seguros adecuada, me especializo en hacer simples las decisiones complejas de seguros. Ya sea que necesites Medicare, ACA, Seguro de Vida, o Anualidades, estoy aquí para guiarte en cada paso del camino.",
         "stats": {
-            "experience": "10+ Años de Experiencia",
+            "experience": "20+ Años de Experiencia",
             "clients": "500+ Clientes Felices",
             "service": "Servicio Bilingüe (EN/ES)"
         },
@@ -23,7 +23,7 @@
             "contact": "Contáctame",
             "services": "Ver Servicios"
         },
-        "imageAlt": "Mary Carmen Chamorro - Agente de Seguros Profesional"
+        "imageAlt": "Mary Chamorro - Agente de Seguros Profesional"
     },
     "Services": {
         "title": "Cómo Puedo Ayudarte",
@@ -34,33 +34,28 @@
                 "Planes de Medicare",
                 "Medicare Advantage",
                 "Suplemento de Medicare",
+                "Mercado de Seguros-ACA",
+                "Covered California",
                 "Cuidado a Largo Plazo",
                 "Seguro de Discapacidad"
             ]
         },
-        "wealth": {
-            "title": "Planificación de Riqueza",
-            "items": [
-                "Planificación de Jubilación",
-                "Planificación Financiera",
-                "Estrategias de Inversión",
-                "Anualidades",
-                "Guía de IRA/401k"
-            ]
-        },
         "legacy": {
-            "title": "Vida y Legado",
+            "title": "Seguro de Vida y Legado",
             "items": [
                 "Seguro de Vida",
                 "Vida a Término",
                 "Vida Entera",
                 "Vida Universal",
-                "Planificación Patrimonial"
+                "Anualidades",
+                "Estrategias de Jubilación",
+                "Planificación Patrimonial",
+                "Planes Funerarios"
             ]
         }
     },
     "Video": {
-        "title": "Conoce a Mary Carmen",
+        "title": "Conoce a Mary",
         "subtitle": "Mira mi introducción y aprende cómo puedo ayudarte",
         "placeholder": "[Video Placeholder - Carga el código de inserción de YouTube/Vimeo]",
         "embedLabel": "Futura Inserción de YouTube/Vimeo"
@@ -70,17 +65,17 @@
         "subtitle": "Historias reales de familias que he ayudado",
         "cards": [
             {
-                "quote": "¡Mary Carmen hizo que Medicare fuera tan fácil de entender! Se tomó el tiempo para explicar todas mis opciones en español y me ayudó a encontrar el plan perfecto. Estoy muy agradecida por su paciencia y experiencia.",
+                "quote": "¡Mary hizo que Medicare fuera tan fácil de entender! Se tomó el tiempo para explicar todas mis opciones en español y me ayudó a encontrar el plan perfecto. Estoy muy agradecida por su paciencia y experiencia.",
                 "name": "Rosa Martinez",
                 "detail": "Cliente de Medicare desde 2022"
             },
             {
-                "quote": "Estaba abrumado con las opciones de seguro de vida hasta que conocí a Mary Carmen. Escuchó las necesidades de mi familia y nos encontró una cobertura que realmente se ajusta a nuestro presupuesto. ¡Muy recomendable!",
+                "quote": "Estaba abrumado con las opciones de seguro de vida hasta que conocí a Mary. Escuchó las necesidades de mi familia y nos encontró una cobertura que realmente se ajusta a nuestro presupuesto. ¡Muy recomendable!",
                 "name": "Carlos Hernandez",
                 "detail": "Cliente de Seguro de Vida"
             },
             {
-                "quote": "Profesional, conocedora y realmente se preocupa por sus clientes. Mary Carmen ayudó a mis padres a obtener planes de Medicare Advantage y les ahorró cientos por mes. ¡Ella es la mejor!",
+                "quote": "Profesional, conocedora y realmente se preocupa por sus clientes. Mary ayudó a mis padres a obtener planes de Medicare Advantage y les ahorró cientos por mes. ¡Ella es la mejor!",
                 "name": "Jennifer Lopez",
                 "detail": "Cliente de cobertura familiar"
             }
@@ -100,7 +95,7 @@
             },
             "location": {
                 "label": "Visítame",
-                "value": "[Address Placeholder], California, USA",
+                "value": "Pasadena, California",
                 "button": "Obtener Direcciones"
             },
             "social": {
@@ -121,7 +116,18 @@
     },
     "Footer": {
         "branding": {
-            "license": "Licencia CA #: [CA #XXXXXX]",
+            "licenseTitle": "Estados y Licencias",
+            "licenses": [
+                "CA Lic#0C55914",
+                "FL Lic#E071821",
+                "MI Lic#2740268",
+                "NJ Lic#1172559",
+                "NM Lic#2740268",
+                "NY Lic#LA-1124744",
+                "NC Lic#2740268",
+                "SC Lic#2740268",
+                "TX Lic#1231061"
+            ],
             "description": "Agente de seguros licenciada especializada en Medicare, ACA, seguro de vida y planificación financiera para la comunidad hispana."
         },
         "quickLinks": {

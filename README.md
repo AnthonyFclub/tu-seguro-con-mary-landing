@@ -1,6 +1,6 @@
 # Tú Seguro con Mary - Professional Landing Page
 
-This is a professional, bilingual (English/Spanish) landing page built for Mary Carmen Chamorro's insurance agency.
+This is a professional, bilingual (English/Spanish) landing page built for Mary Chamorro's insurance agency.
 
 ## Tech Stack
 - **Framework**: [Next.js 14+](https://nextjs.org/) (App Router)
@@ -34,7 +34,7 @@ This is a professional, bilingual (English/Spanish) landing page built for Mary 
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Placeholders to Update
-- **Hero Image**: Replace the placeholder in `components/Hero.tsx` with a professional 600x800px portrait of Mary Carmen.
+- **Hero Image**: Replace the placeholder in `components/Hero.tsx` with a professional 600x800px portrait of Mary.
 - **Video**: Provide the YouTube/Vimeo embed code in `messages/en.json` and `messages/es.json`.
 - **Contact Details**: Update phone, address, and license number in `messages/en.json` and `messages/es.json`.
 - **Social Links**: Update social media URLs in `components/Contact.tsx`.

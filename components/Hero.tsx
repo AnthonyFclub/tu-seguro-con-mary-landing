@@ -30,38 +30,40 @@ export default function Hero() {
     ];
 
     return (
-        <section id="about" className="relative min-h-screen flex items-center bg-[#FEF3E2]/30 overflow-hidden">
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-50" />
-
-            <div className="container mx-auto px-4 py-12 lg:py-20 relative z-10">
+        <section
+            id="about"
+            className="relative min-h-screen flex items-center overflow-hidden bg-center bg-no-repeat"
+            style={{
+                backgroundImage: 'url("/images/hero-bg-pastel-cubes.png")',
+                backgroundSize: '100% 100%',
+                backgroundRepeat: 'no-repeat'
+            }}
+        >
+            {/* Background Image - Using standard CSS background to avoid Next.js Image fill zooming if resolution is an issue */}
+            <div className="container mx-auto px-4 pt-32 pb-12 lg:pt-40 lg:pb-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
                     {/* Column Left: Content */}
                     <div className="lg:col-span-7 space-y-8 animate-in fade-in slide-in-from-left duration-1000">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold/10 text-brand-gold text-sm font-bold shadow-sm">
-                            <CheckCircle2 className="w-4 h-4" />
-                            {t('badge')}
-                        </div>
-
                         <div className="space-y-4">
-                            <h1 className="text-5xl lg:text-7xl font-bold text-brand-blue leading-tight">
+                            <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
                                 {t('headline')}
                             </h1>
-                            <h2 className="text-2xl lg:text-3xl font-medium text-brand-gold">
+                            <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 font-serif drop-shadow-[0_1px_1px_rgba(255,255,255,0.5)]">
                                 {t('subheadline')}
                             </h2>
-                            <p className="text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
-                                {t('description')}
-                            </p>
                         </div>
+
+                        <p className="text-lg text-black leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
+                            {t('description')}
+                        </p>
 
                         {/* Stats */}
                         <div className="flex flex-wrap gap-4">
                             {stats.map((stat, i) => (
-                                <div key={i} className="flex items-center gap-2 px-4 py-3 bg-white rounded-xl shadow-sm border border-brand-gold/20">
-                                    <span className="text-brand-gold">{stat.icon}</span>
-                                    <span className="text-sm font-semibold text-gray-700">{stat.label}</span>
+                                <div key={i} className="flex items-center gap-2 px-4 py-3 bg-black/5 backdrop-blur-md rounded-xl shadow-sm border border-black/10 hover:bg-black/10 transition-colors">
+                                    <span className="text-brand-blue">{stat.icon}</span>
+                                    <span className="text-sm font-bold text-slate-900">{stat.label}</span>
                                 </div>
                             ))}
                         </div>
@@ -70,13 +72,13 @@ export default function Hero() {
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Link
                                 href="#contact"
-                                className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95"
+                                className="bg-brand-blue/90 hover:bg-brand-blue text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95 border border-white/30"
                             >
                                 {t('buttons.contact')}
                             </Link>
                             <Link
                                 href="#services"
-                                className="border-2 border-brand-gold text-brand-gold hover:bg-brand-gold/5 px-8 py-4 rounded-xl font-bold text-lg transition-all active:scale-95"
+                                className="bg-white/40 backdrop-blur-md border border-slate-200 text-slate-900 hover:bg-white/60 px-8 py-4 rounded-xl font-bold text-lg shadow-sm hover:shadow-md transition-all active:scale-95"
                             >
                                 {t('buttons.services')}
                             </Link>

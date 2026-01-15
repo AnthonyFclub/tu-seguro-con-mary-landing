@@ -38,38 +38,47 @@ export default function Contact() {
     ];
 
     return (
-        <section id="contact" className="py-24 lg:py-32 bg-brand-blue text-white overflow-hidden relative">
-            {/* Abstract Background Design */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <section
+            id="contact"
+            className="py-24 lg:py-32 relative overflow-hidden bg-center bg-no-repeat"
+            style={{
+                backgroundImage: 'url("/images/contact-bg-blocks.jpg")',
+                backgroundSize: '100% 100%',
+                backgroundRepeat: 'no-repeat'
+            }}
+        >
+            {/* Light Overlay for Readability */}
+            <div className="absolute inset-0 bg-[#0f172a]/30" />
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
                     {/* Left: Content & Methods */}
-                    <div className="space-y-12">
-                        <div>
-                            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
+                    <div className="lg:col-span-7 space-y-12">
+                        <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-2xl">
+                            <h2 className="text-4xl lg:text-6xl font-extrabold mb-4 text-white font-serif drop-shadow-lg">
                                 {t('title')}
                             </h2>
-                            <p className="text-xl text-blue-100">
+                            <p className="text-xl text-white/90 font-serif">
                                 {t('subtitle')}
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             {contactMethods.map((method, i) => (
-                                <div key={i} className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:border-white/20 transition-all">
-                                    <div className={`${method.color} w-12 h-12 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
-                                        {method.icon}
+                                <div key={i} className="bg-white/10 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 hover:bg-white/20 hover:scale-[1.02] transition-all duration-500 shadow-2xl group flex flex-col items-center text-center lg:items-start lg:text-left">
+                                    <div className={`${method.color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 transition-transform`}>
+                                        <div className="text-white">
+                                            {method.icon}
+                                        </div>
                                     </div>
-                                    <p className="text-blue-200 text-sm mb-1 font-medium uppercase tracking-wider">{method.label}</p>
-                                    <p className="text-xl sm:text-lg font-bold mb-6 break-all">{method.value}</p>
+                                    <p className="text-brand-gold font-bold text-xs mb-2 uppercase tracking-[0.2em]">{method.label}</p>
+                                    <p className="text-2xl font-bold mb-8 text-white tracking-tight">{method.value}</p>
                                     <a
                                         href={method.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-full bg-white text-brand-blue font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors shadow-md text-center inline-block"
+                                        className="w-full bg-white text-[#0f172a] font-extrabold py-4 rounded-2xl hover:bg-brand-gold hover:text-white transition-all shadow-xl text-center inline-block transform active:scale-95"
                                     >
                                         {method.button}
                                     </a>
@@ -77,32 +86,35 @@ export default function Contact() {
                             ))}
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-center gap-12">
-                            <div className="flex items-start gap-4">
-                                <div className="bg-brand-gold p-3 rounded-2xl">
-                                    <MapPin className="w-6 h-6" />
+                        <div className="flex flex-col sm:flex-row items-center justify-between gap-12 bg-white/5 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 shadow-2xl">
+                            <div className="flex items-center gap-6">
+                                <div className="bg-brand-gold/20 p-4 rounded-2xl border border-brand-gold/30">
+                                    <MapPin className="w-8 h-8 text-brand-gold" />
                                 </div>
                                 <div>
-                                    <p className="font-bold text-lg">{t('methods.location.label')}</p>
-                                    <p className="text-blue-100 whitespace-pre-line">{t('methods.location.value')}</p>
-                                    <button className="text-brand-gold font-bold mt-2 hover:text-white transition-colors underline decoration-2 underline-offset-4 text-left">
+                                    <p className="font-bold text-gray-400 uppercase tracking-widest text-[10px] mb-1">{t('methods.location.label')}</p>
+                                    <p className="text-white text-xl font-bold">{t('methods.location.value')}</p>
+                                    <button className="text-brand-gold font-bold mt-2 hover:text-white transition-colors text-sm flex items-center gap-1 group">
                                         {t('methods.location.button')}
+                                        <span className="group-hover:translate-x-1 transition-transform">→</span>
                                     </button>
                                 </div>
                             </div>
 
-                            <div>
-                                <p className="font-bold text-lg mb-4">{t('methods.social.title')}</p>
-                                <div className="flex gap-4">
+                            <div className="h-12 w-[1px] bg-white/10 hidden sm:block" />
+
+                            <div className="text-center sm:text-left">
+                                <p className="font-bold text-gray-400 uppercase tracking-widest text-[10px] mb-3">{t('methods.social.title')}</p>
+                                <div className="flex gap-6">
                                     {socialLinks.map((social, i) => (
                                         <a
                                             key={i}
                                             href={social.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`text-white/70 ${social.color} transition-colors transform hover:scale-110 flex items-center justify-center`}
+                                            className={`text-white/60 ${social.color} transition-all transform hover:scale-125`}
                                         >
-                                            {social.icon}
+                                            <div className="w-6 h-6">{social.icon}</div>
                                         </a>
                                     ))}
                                 </div>
@@ -111,37 +123,42 @@ export default function Contact() {
                     </div>
 
                     {/* Right: Final CTA Box */}
-                    <div className="bg-white rounded-[2.5rem] p-10 lg:p-14 text-gray-900 shadow-2xl relative">
-                        {/* Top Badge */}
-                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-brand-gold text-white px-8 py-3 rounded-full font-bold shadow-xl">
-                            {t('cta.badge')}
-                        </div>
+                    <div className="lg:col-span-5">
+                        <div className="bg-white/10 backdrop-blur-2xl rounded-[3rem] p-10 lg:p-14 text-white border border-white/20 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+                            {/* Decorative blur */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/20 rounded-full blur-[100px] -mr-32 -mt-32 transition-all group-hover:bg-brand-gold/30" />
 
-                        <div className="text-center space-y-8 mt-4">
-                            <h3 className="text-3xl font-bold leading-tight text-brand-blue">
-                                {t('cta.title')}
-                            </h3>
-
-                            <button className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white font-bold text-xl py-5 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 active:scale-95">
-                                {t('cta.button')}
-                            </button>
-
-                            <div className="flex flex-col gap-4 text-left">
-                                {[0, 1, 2].map((idx) => (
-                                    <div key={idx} className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100">
-                                        <div className="bg-brand-gold/10 p-1.5 rounded-full text-brand-gold">
-                                            <Check className="w-4 h-4" />
-                                        </div>
-                                        <span className="font-semibold text-gray-700">
-                                            {t(`cta.features.${idx}`)}
-                                        </span>
-                                    </div>
-                                ))}
+                            {/* Top Badge */}
+                            <div className="absolute -top-1 left-1/2 -translate-x-1/2 bg-brand-gold text-white px-8 py-2 rounded-b-3xl font-bold shadow-xl text-xs uppercase tracking-widest">
+                                {t('cta.badge')}
                             </div>
 
-                            <p className="text-sm text-gray-500 italic">
-                                {t('cta.bottomText')}
-                            </p>
+                            <div className="text-center space-y-10 relative z-10">
+                                <h3 className="text-4xl font-extrabold leading-tight font-serif drop-shadow-md">
+                                    {t('cta.title')}
+                                </h3>
+
+                                <button className="w-full bg-white text-[#0f172a] hover:bg-brand-gold hover:text-white font-extrabold text-xl py-6 rounded-3xl shadow-2xl hover:shadow-brand-gold/20 transition-all transform hover:-translate-y-1 active:scale-95">
+                                    {t('cta.button')}
+                                </button>
+
+                                <div className="flex flex-col gap-4 text-left">
+                                    {[0, 1, 2].map((idx) => (
+                                        <div key={idx} className="flex items-center gap-4 bg-white/5 p-5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                            <div className="bg-brand-gold/20 p-2 rounded-full text-brand-gold">
+                                                <Check className="w-5 h-5" />
+                                            </div>
+                                            <span className="font-bold text-gray-200">
+                                                {t(`cta.features.${idx}`)}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <p className="text-sm text-gray-400 italic font-medium">
+                                    {t('cta.bottomText')}
+                                </p>
+                            </div>
                         </div>
                     </div>
 

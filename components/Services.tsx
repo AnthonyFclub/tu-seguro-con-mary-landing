@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { HeartPulse, TrendingUp, Shield, Check } from 'lucide-react';
 
 export default function Services() {
@@ -9,82 +10,75 @@ export default function Services() {
             id: 'health',
             icon: <HeartPulse className="w-8 h-8 text-pink-500" />,
             title: t('health.title'),
-            items: [
-                t('health.items.0'),
-                t('health.items.1'),
-                t('health.items.2'),
-                t('health.items.3'),
-                t('health.items.4'),
-            ],
+            items: t.raw('health.items') as string[],
             borderColor: 'border-pink-500',
             bgColor: 'bg-pink-50/30',
-        },
-        {
-            id: 'wealth',
-            icon: <TrendingUp className="w-8 h-8 text-brand-gold" />,
-            title: t('wealth.title'),
-            items: [
-                t('wealth.items.0'),
-                t('wealth.items.1'),
-                t('wealth.items.2'),
-                t('wealth.items.3'),
-                t('wealth.items.4'),
-            ],
-            borderColor: 'border-brand-gold',
-            bgColor: 'bg-brand-gold/10',
+            bgImage: '/images/service-bg-health.jpg'
         },
         {
             id: 'legacy',
             icon: <Shield className="w-8 h-8 text-brand-blue" />,
             title: t('legacy.title'),
-            items: [
-                t('legacy.items.0'),
-                t('legacy.items.1'),
-                t('legacy.items.2'),
-                t('legacy.items.3'),
-                t('legacy.items.4'),
-            ],
+            items: t.raw('legacy.items') as string[],
             borderColor: 'border-brand-blue',
             bgColor: 'bg-brand-blue/10',
+            bgImage: '/images/service-bg-legacy.png'
         },
     ];
 
     return (
-        <section id="services" className="py-24 lg:py-32 bg-white">
-            <div className="container mx-auto px-4">
+        <section
+            id="services"
+            className="py-24 lg:py-32 relative overflow-hidden bg-white"
+        >
+
+            <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header */}
-                <div className="max-w-3xl mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 transition-all">
+                <div className="max-w-3xl mb-16 mx-auto text-center">
+                    <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 transition-all font-serif">
                         {t('title')}
                     </h2>
-                    <p className="text-xl text-gray-600">
+                    <p className="text-xl text-slate-600 font-medium font-serif">
                         {t('subtitle')}
                     </p>
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-10">
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className={`group bg-white rounded-2xl p-8 border-l-4 ${service.borderColor} shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}
+                            className={`group relative overflow-hidden bg-slate-50 rounded-3xl p-10 border border-slate-100 shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center`}
                         >
-                            <div className={`w-16 h-16 ${service.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                                {service.icon}
+                            {/* Blurred Background Image */}
+                            <div className="absolute inset-0 z-0">
+                                <Image
+                                    src={service.bgImage}
+                                    alt=""
+                                    fill
+                                    className="object-cover blur-[2px] opacity-[0.25] scale-110 group-hover:scale-125 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-white/25" />
                             </div>
 
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                                {service.title}
-                            </h3>
+                            <div className="relative z-10 flex flex-col items-center w-full">
+                                <div className={`w-20 h-20 ${service.bgColor} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform shadow-inner border border-slate-100`}>
+                                    {service.icon}
+                                </div>
 
-                            <ul className="space-y-4">
-                                {service.items.map((item, idx) => (
-                                    <li key={idx} className="flex items-start gap-3 text-gray-700">
-                                        <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${service.id === 'health' ? 'text-pink-500' : service.id === 'wealth' ? 'text-brand-gold' : 'text-brand-blue'}`} />
-                                        <span className="font-medium">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                                <h3 className="text-3xl font-bold text-slate-900 mb-8 font-serif">
+                                    {service.title}
+                                </h3>
+
+                                <ul className="space-y-5 w-full">
+                                    {service.items.map((item, idx) => (
+                                        <li key={idx} className="flex items-center gap-4 text-slate-800 font-semibold justify-center">
+                                            <div className={`w-2 h-2 rounded-full flex-shrink-0 ${service.id === 'health' ? 'bg-pink-400' : 'bg-blue-400'}`} />
+                                            <span className="leading-tight">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     ))}
                 </div>

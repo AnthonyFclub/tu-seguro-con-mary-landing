@@ -16,6 +16,7 @@ export default function VideoSection() {
     const h = useTranslations('Header');
     const playerRef = useRef<any>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+    const isIntersectingRef = useRef(false);
     const [isApiLoaded, setIsApiLoaded] = useState(false);
 
     useEffect(() => {
@@ -29,7 +30,7 @@ export default function VideoSection() {
             window.onYouTubeIframeAPIReady = () => {
                 setIsApiLoaded(true);
             };
-        } else {
+        } else if (window.YT && window.YT.Player) {
             setIsApiLoaded(true);
         }
     }, []);
@@ -39,42 +40,56 @@ export default function VideoSection() {
 
         const videoId = 'iakNXZzJbds';
 
-        // Initialize Player
+        // Initialize Player - Always muted for reliable autoplay
         const player = new window.YT.Player('youtube-player', {
             videoId: videoId,
             playerVars: {
                 autoplay: 0,
-                mute: 1, // Start muted to satisfy autoplay policies
+                mute: 1,
                 loop: 1,
                 playlist: videoId,
                 controls: 1,
                 rel: 0,
                 modestbranding: 1,
+                playsinline: 1,
+                origin: typeof window !== 'undefined' ? window.location.origin : '',
             },
             events: {
                 onReady: (event: any) => {
                     playerRef.current = event.target;
-                },
+                    if (isIntersectingRef.current) {
+                        playerRef.current.playVideo();
+                    }
+                }
             },
         });
 
         // Intersection Observer logic
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        if (playerRef.current) {
+                const entry = entries[0];
+                if (!entry) return;
+
+                isIntersectingRef.current = entry.isIntersecting;
+
+                if (entry.isIntersecting) {
+                    if (playerRef.current) {
+                        try {
+                            playerRef.current.mute(); // Ensure it stays muted
                             playerRef.current.playVideo();
-                            playerRef.current.unMute();
-                        }
-                    } else {
-                        if (playerRef.current) {
-                            playerRef.current.pauseVideo();
-                        }
+                        } catch (e) { }
                     }
-                });
+                } else {
+                    if (playerRef.current) {
+                        try {
+                            playerRef.current.pauseVideo();
+                        } catch (e) { }
+                    }
+                }
             },
-            { threshold: 0.5 } // Play when 50% visible
+            {
+                threshold: 0.1,
+            }
         );
 
         if (containerRef.current) {
@@ -92,13 +107,20 @@ export default function VideoSection() {
     }, [isApiLoaded]);
 
     return (
-        <section className="py-24 lg:py-32 bg-[#FEF3E2]/50">
+        <section
+            className="py-24 lg:py-32 relative overflow-hidden bg-center bg-no-repeat"
+            style={{
+                backgroundImage: 'url("/images/section-bg-2.png")',
+                backgroundSize: '100% 100%',
+                backgroundRepeat: 'no-repeat'
+            }}
+        >
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto text-center mb-12">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
                         {t('title')}
                     </h2>
-                    <p className="text-xl text-gray-600">
+                    <p className="text-xl text-white font-medium drop-shadow-md">
                         {t('subtitle')}
                     </p>
                 </div>
@@ -119,11 +141,11 @@ export default function VideoSection() {
                             </div>
 
                             {/* Brand Text */}
-                            <div className="text-center -mt-8">
-                                <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-brand-blue mb-1">
+                            <div className="text-center -mt-8 bg-black/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-xl">
+                                <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1 drop-shadow-md">
                                     Tú Seguro con Mary
                                 </h3>
-                                <p className="text-sm lg:text-base xl:text-lg font-bold text-brand-gold uppercase tracking-wider">
+                                <p className="text-sm lg:text-base xl:text-lg font-bold text-brand-gold uppercase tracking-wider drop-shadow-sm">
                                     {h('tagline')}
                                 </p>
                             </div>

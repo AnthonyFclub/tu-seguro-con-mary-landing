@@ -11,11 +11,11 @@
   },
   "Hero": {
     "badge": "Licensed Insurance Agent",
-    "headline": "Hi, I'm Mary Carmen",
+    "headline": "Hi, I'm Mary",
     "subheadline": "Your Trusted Insurance Guide",
-    "description": "With over 10 years of experience helping families find the right insurance coverage, I specialize in making complex insurance decisions simple. Whether you need Medicare, ACA, Life Insurance, or Annuities, I'm here to guide you every step of the way.",
+    "description": "With over 20 years of experience helping families find the right insurance coverage, I specialize in making complex insurance decisions simple. Whether you need Medicare, ACA, Life Insurance, or Annuities, I'm here to guide you every step of the way.",
     "stats": {
-      "experience": "10+ Years Experience",
+      "experience": "20+ Years Experience",
       "clients": "500+ Happy Clients",
       "service": "Bilingual Service (EN/ES)"
     },
@@ -23,7 +23,7 @@
       "contact": "Contact Me",
       "services": "View Services"
     },
-    "imageAlt": "Mary Carmen Chamorro - Professional Insurance Agent"
+    "imageAlt": "Mary Chamorro - Professional Insurance Agent"
   },
   "Services": {
     "title": "How I Can Help You",
@@ -34,33 +34,28 @@
         "Medicare Plans",
         "Medicare Advantage",
         "Medicare Supplement",
+        "Health Marketplace-ACA",
+        "Covered California",
         "Long-Term Care",
         "Disability Insurance"
       ]
     },
-    "wealth": {
-      "title": "Wealth Planning",
-      "items": [
-        "Retirement Planning",
-        "Financial Planning",
-        "Investment Strategies",
-        "Annuities",
-        "IRA/401k Guidance"
-      ]
-    },
     "legacy": {
-      "title": "Life & Legacy",
+      "title": "Life Insurance & Legacy",
       "items": [
         "Life Insurance",
         "Term Life",
         "Whole Life",
         "Universal Life",
-        "Estate Planning"
+        "Annuities",
+        "Retirement Strategies",
+        "Estate Planning",
+        "Funeral Plans"
       ]
     }
   },
   "Video": {
-    "title": "Meet Mary Carmen",
+    "title": "Meet Mary",
     "subtitle": "Watch my introduction and learn how I can help you",
     "placeholder": "[Video Placeholder - Upload YouTube/Vimeo embed code]",
     "embedLabel": "Future YouTube/Vimeo Embed"
@@ -70,17 +65,17 @@
     "subtitle": "Real stories from families I've helped",
     "cards": [
       {
-        "quote": "Mary Carmen made Medicare so easy to understand! She took time to explain all my options in Spanish and helped me find the perfect plan. I'm so grateful for her patience and expertise.",
+        "quote": "Mary made Medicare so easy to understand! She took time to explain all my options in Spanish and helped me find the perfect plan. I'm so grateful for her patience and expertise.",
         "name": "Rosa Martinez",
         "detail": "Medicare client since 2022"
       },
       {
-        "quote": "I was overwhelmed with life insurance options until I met Mary Carmen. She listened to my family's needs and found us coverage that actually fits our budget. Highly recommend!",
+        "quote": "I was overwhelmed with life insurance options until I met Mary. She listened to my family's needs and found us coverage that actually fits our budget. Highly recommend!",
         "name": "Carlos Hernandez",
         "detail": "Life Insurance client"
       },
       {
-        "quote": "Professional, knowledgeable, and truly cares about her clients. Mary Carmen helped both my parents get on Medicare Advantage plans and saved them hundreds per month. She's the best!",
+        "quote": "Professional, knowledgeable, and truly cares about her clients. Mary helped both my parents get on Medicare Advantage plans and saved them hundreds per month. She's the best!",
         "name": "Jennifer Lopez",
         "detail": "Family coverage client"
       }
@@ -100,7 +95,7 @@
       },
       "location": {
         "label": "Visit Me",
-        "value": "[Address Placeholder], California, USA",
+        "value": "Pasadena, California",
         "button": "Get Directions"
       },
       "social": {
@@ -121,7 +116,18 @@
   },
   "Footer": {
     "branding": {
-      "license": "CA License #: [CA #XXXXXX]",
+      "licenseTitle": "States & Licenses",
+      "licenses": [
+        "CA Lic#0C55914",
+        "FL Lic#E071821",
+        "MI Lic#2740268",
+        "NJ Lic#1172559",
+        "NM Lic#2740268",
+        "NY Lic#LA-1124744",
+        "NC Lic#2740268",
+        "SC Lic#2740268",
+        "TX Lic#1231061"
+      ],
       "description": "Licensed insurance agent specializing in Medicare, ACA, Life Insurance, and Financial Planning for the Hispanic community."
     },
     "quickLinks": {
