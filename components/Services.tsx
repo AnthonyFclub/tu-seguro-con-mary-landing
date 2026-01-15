@@ -9,20 +9,20 @@ export default function Services() {
         {
             id: 'health',
             icon: <HeartPulse className="w-8 h-8 text-pink-500" />,
-            title: t('health.title'),
+            title: 'Health Insurance',
             items: t.raw('health.items') as string[],
             borderColor: 'border-pink-500',
             bgColor: 'bg-pink-50/30',
-            bgImage: '/images/service-bg-health.jpg'
+            bgImage: '/images/service-bg-health-hispanic.png'
         },
         {
             id: 'legacy',
             icon: <Shield className="w-8 h-8 text-brand-blue" />,
-            title: t('legacy.title'),
+            title: 'Life Insurance & Legacy',
             items: t.raw('legacy.items') as string[],
             borderColor: 'border-brand-blue',
             bgColor: 'bg-brand-blue/10',
-            bgImage: '/images/service-bg-legacy.png'
+            bgImage: '/images/service-bg-legacy-hispanic.png'
         },
     ];
 
@@ -50,15 +50,15 @@ export default function Services() {
                             key={service.id}
                             className={`group relative overflow-hidden bg-slate-50 rounded-3xl p-10 border border-slate-100 shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center`}
                         >
-                            {/* Blurred Background Image */}
+                            {/* Clear Background Image */}
                             <div className="absolute inset-0 z-0">
                                 <Image
                                     src={service.bgImage}
                                     alt=""
                                     fill
-                                    className="object-cover blur-[2px] opacity-[0.25] scale-110 group-hover:scale-125 transition-transform duration-700"
+                                    className="object-cover opacity-[0.65] scale-110 group-hover:scale-125 transition-transform duration-700"
                                 />
-                                <div className="absolute inset-0 bg-white/25" />
+                                <div className="absolute inset-0 bg-white/10" />
                             </div>
 
                             <div className="relative z-10 flex flex-col items-center w-full">

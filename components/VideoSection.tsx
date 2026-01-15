@@ -146,7 +146,7 @@ export default function VideoSection() {
                                     Tú Seguro con Mary
                                 </h3>
                                 <p className="text-sm lg:text-base xl:text-lg font-bold text-brand-gold uppercase tracking-wider drop-shadow-sm">
-                                    {h('tagline')}
+                                    PROTECT WHAT MATTERS MOST
                                 </p>
                             </div>
                         </div>
