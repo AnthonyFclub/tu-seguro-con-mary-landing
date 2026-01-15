@@ -12,11 +12,11 @@
     "Hero": {
         "badge": "Agente de Seguros Licenciada",
         "headline": "Hola, soy Mary",
-        "subheadline": "Tu Guía de Seguros de Confianza",
-        "description": "Con más de 20 años de experiencia ayudando a familias a encontrar la cobertura de seguros adecuada, me especializo en hacer simples las decisiones complejas de seguros. Ya sea que necesites Medicare, ACA, Seguro de Vida, o Anualidades, estoy aquí para guiarte en cada paso del camino.",
+        "subheadline": "Tú agente de confianza",
+        "description": "Con más de 20 años de experiencia, ayudando a familias a encontrar la cobertura de seguros adecuada, me especializó en hacer simples las decisiones complejas de las coberturas de seguros. Ya sea que necesites ayuda con un seguro de de vida, un seguro médico, una anualidad o un plan de retiro, estoy aquí para guiarte en cada paso del camino.",
         "stats": {
             "experience": "20+ Años de Experiencia",
-            "clients": "500+ Clientes Felices",
+            "clients": "500+ Clientes satisfechos",
             "service": "Servicio Bilingüe (EN/ES)"
         },
         "buttons": {
@@ -29,7 +29,7 @@
         "title": "Cómo Puedo Ayudarte",
         "subtitle": "Soluciones de seguros especializadas para tus necesidades",
         "health": {
-            "title": "Seguros de Salud",
+            "title": "Seguro Médico",
             "items": [
                 "Planes de Medicare",
                 "Medicare Advantage",
@@ -43,13 +43,11 @@
         "legacy": {
             "title": "Seguro de Vida y Legado",
             "items": [
-                "Seguro de Vida",
-                "Vida a Término",
-                "Vida Entera",
-                "Vida Universal",
+                "Póliza de Término",
+                "Póliza Permanente",
+                "Póliza Universal",
                 "Anualidades",
-                "Estrategias de Jubilación",
-                "Planificación Patrimonial",
+                "Estrategias de Retiro",
                 "Planes Funerarios"
             ]
         }

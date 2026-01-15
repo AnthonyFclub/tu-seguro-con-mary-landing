@@ -40,64 +40,61 @@ export default function Hero() {
             }}
         >
             {/* Background Image - Using standard CSS background to avoid Next.js Image fill zooming if resolution is an issue */}
-            <div className="container mx-auto px-4 pt-32 pb-12 lg:pt-40 lg:pb-20 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="container mx-auto px-4 pt-24 pb-8 lg:pt-32 lg:pb-12 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-                    {/* Column Left: Content */}
-                    <div className="lg:col-span-7 space-y-8 animate-in fade-in slide-in-from-left duration-1000">
-                        <div className="space-y-4">
-                            <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
-                                {t('headline')}
-                            </h1>
-                            <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 font-serif drop-shadow-[0_1px_1px_rgba(255,255,255,0.5)]">
-                                {t('subheadline')}
-                            </h2>
-                        </div>
+                    {/* Column Left: Content - Unified in a Glass Panel */}
+                    <div className="lg:col-span-7 animate-in fade-in slide-in-from-left duration-1000">
+                        <div className="bg-white/10 backdrop-blur-xl p-6 lg:p-10 rounded-[3rem] border border-white/20 shadow-2xl space-y-6">
+                            <div className="space-y-2">
+                                <h1 className="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
+                                    {t('headline')}
+                                </h1>
+                                <h2 className="text-xl lg:text-2xl font-bold text-slate-800 font-serif drop-shadow-[0_1px_1px_rgba(255,255,255,0.5)]">
+                                    {t('subheadline')}
+                                </h2>
+                            </div>
 
-                        <p className="text-lg text-black leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
-                            {t('description')}
-                        </p>
+                            <p className="text-lg lg:text-xl text-black leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
+                                {t('description')}
+                            </p>
 
-                        {/* Stats */}
-                        <div className="flex flex-wrap gap-4">
-                            {stats.map((stat, i) => (
-                                <div key={i} className="flex items-center gap-2 px-4 py-3 bg-black/5 backdrop-blur-md rounded-xl shadow-sm border border-black/10 hover:bg-black/10 transition-colors">
-                                    <span className="text-brand-blue">{stat.icon}</span>
-                                    <span className="text-sm font-bold text-slate-900">{stat.label}</span>
-                                </div>
-                            ))}
-                        </div>
+                            {/* Stats - Crystal effect badges */}
+                            <div className="flex flex-wrap gap-3">
+                                {stats.map((stat, i) => (
+                                    <div key={i} className="flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-xl rounded-xl shadow-lg border border-white/20 hover:bg-white/20 transition-all">
+                                        <span className="text-brand-blue">{stat.icon}</span>
+                                        <span className="text-sm font-bold text-slate-900">{stat.label}</span>
+                                    </div>
+                                ))}
+                            </div>
 
-                        {/* Actions */}
-                        <div className="flex flex-wrap gap-4 pt-4">
-                            <Link
-                                href="#contact"
-                                className="bg-brand-blue/90 hover:bg-brand-blue text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95 border border-white/30"
-                            >
-                                {t('buttons.contact')}
-                            </Link>
-                            <Link
-                                href="#services"
-                                className="bg-white/40 backdrop-blur-md border border-slate-200 text-slate-900 hover:bg-white/60 px-8 py-4 rounded-xl font-bold text-lg shadow-sm hover:shadow-md transition-all active:scale-95"
-                            >
-                                {t('buttons.services')}
-                            </Link>
-                        </div>
-
-                        {/* Quick Socials */}
-                        <div className="flex items-center gap-4 pt-6">
-                            {socialIcons.map((social, i) => (
-                                <a
-                                    key={i}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`${social.color} p-3 rounded-full text-white shadow-md hover:scale-110 transition-transform active:scale-90 flex items-center justify-center`}
-                                    title={social.label}
+                            {/* Actions - Single prominent button with crystal effect */}
+                            <div className="flex flex-wrap gap-4 pt-2">
+                                <Link
+                                    href="#services"
+                                    className="bg-white/10 backdrop-blur-xl hover:bg-white/20 text-slate-900 px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95 border border-white/20 flex items-center gap-3 group"
                                 >
-                                    {social.icon}
-                                </a>
-                            ))}
+                                    {t('buttons.services')}
+                                    <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
+                                </Link>
+                            </div>
+
+                            {/* Quick Socials */}
+                            <div className="flex items-center gap-4 pt-2">
+                                {socialIcons.map((social, i) => (
+                                    <a
+                                        key={i}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`${social.color} p-2.5 rounded-full text-white shadow-md hover:scale-110 transition-transform active:scale-90 flex items-center justify-center`}
+                                        title={social.label}
+                                    >
+                                        {social.icon}
+                                    </a>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
