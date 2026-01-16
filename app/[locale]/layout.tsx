@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Great_Vibes } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation';
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
+const greatVibes = Great_Vibes({ weight: '400', subsets: ["latin"], variable: '--font-great-vibes' });
 
 export const metadata: Metadata = {
     title: "Mary Insurance | Tú Seguro con Mary",
@@ -24,7 +25,7 @@ export default async function RootLayout(props: any) {
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className={`scroll-smooth ${inter.variable} ${playfair.variable}`}>
+        <html lang={locale} className={`scroll-smooth ${inter.variable} ${playfair.variable} ${greatVibes.variable}`}>
             <body className={`${inter.className} bg-white text-gray-900`}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     {children}

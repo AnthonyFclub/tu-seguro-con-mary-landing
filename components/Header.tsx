@@ -45,10 +45,10 @@ export default function Header() {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-xl lg:text-2xl font-bold text-brand-blue leading-tight">
+                            <span className="text-3xl lg:text-4xl font-normal text-brand-blue leading-tight font-[family-name:var(--font-great-vibes)]">
                                 Tú Seguro con Mary
                             </span>
-                            <span className="text-[10px] lg:text-xs font-bold text-brand-gold tracking-widest uppercase">
+                            <span className="text-[10px] lg:text-xs font-bold text-brand-gold tracking-widest uppercase drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
                                 PROTECT WHAT MATTERS MOST
                             </span>
                         </div>

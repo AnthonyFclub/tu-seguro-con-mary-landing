@@ -23,8 +23,8 @@ export default function Footer() {
                                 <Image src="/logo.png" alt="Logo" width={64} height={64} className="object-contain" />
                             </div>
                             <div>
-                                <p className="text-xl font-bold text-white tracking-tight leading-none mb-1.5">Tú Seguro con Mary</p>
-                                <p className="text-[10px] text-brand-gold font-bold uppercase tracking-widest opacity-90">{h('tagline')}</p>
+                                <p className="text-3xl font-normal text-white tracking-tight leading-none mb-2 font-[family-name:var(--font-great-vibes)]">Tú Seguro con Mary</p>
+                                <p className="text-[10px] text-brand-gold font-bold uppercase tracking-widest opacity-90">PROTECT WHAT MATTERS MOST</p>
                             </div>
                         </div>
                         <p className="text-sm leading-relaxed max-w-sm text-gray-400 font-medium">
