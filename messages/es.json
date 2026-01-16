@@ -110,6 +110,35 @@
                 "Consulta gratuita",
                 "Servicio bilingüe"
             ]
+        },
+        "form": {
+            "name": "Nombre Completo",
+            "phone": "Teléfono",
+            "email": "Correo Electrónico",
+            "product": {
+                "label": "Producto de Interés",
+                "options": {
+                    "medicare": "Medicare",
+                    "health": "Seguro de Salud / ACA",
+                    "life": "Seguro de Vida",
+                    "annuities": "Anualidades",
+                    "retirement": "Planificación de Retiro",
+                    "funeral": "Gastos Finales / Planes Funerarios",
+                    "disability": "Seguro de Discapacidad",
+                    "other": "Otro"
+                }
+            },
+            "question": "¿Tienes alguna pregunta en específico?",
+            "submit": "Enviar Información",
+            "submitting": "Enviando...",
+            "success": "¡Gracias! Hemos recibido tu información. Mary te contactará pronto.",
+            "error": "Hubo un error. Por favor intenta de nuevo.",
+            "placeholder": {
+                "name": "Tu nombre",
+                "phone": "+1 (000) 000-0000",
+                "email": "tu@correo.com",
+                "question": "Escribe tus dudas aquí..."
+            }
         }
     },
     "Footer": {

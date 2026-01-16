@@ -112,6 +112,35 @@
         "Free consultation",
         "Bilingual service"
       ]
+    },
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "product": {
+        "label": "Product of Interest",
+        "options": {
+          "medicare": "Medicare",
+          "health": "Health Insurance / ACA",
+          "life": "Life Insurance",
+          "annuities": "Annuities",
+          "retirement": "Retirement Planning",
+          "funeral": "Final Expenses / Funeral Plans",
+          "disability": "Disability Insurance",
+          "other": "Other"
+        }
+      },
+      "question": "Do you have a specific question?",
+      "submit": "Send Information",
+      "submitting": "Sending...",
+      "success": "Thank you! We've received your information. Mary will contact you soon.",
+      "error": "There was an error. Please try again.",
+      "placeholder": {
+        "name": "Your name",
+        "phone": "+1 (000) 000-0000",
+        "email": "your@email.com",
+        "question": "Write your questions here..."
+      }
     }
   },
   "Footer": {

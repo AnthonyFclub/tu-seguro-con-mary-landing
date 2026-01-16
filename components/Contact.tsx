@@ -1,8 +1,20 @@
+"use client";
+
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { MessageCircle, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube, Check } from 'lucide-react';
+import { MessageCircle, Mail, MapPin, Facebook, Instagram, Check } from 'lucide-react';
 
 export default function Contact() {
     const t = useTranslations('Contact');
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        product: '',
+        question: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const contactMethods = [
         {
@@ -37,6 +49,46 @@ export default function Contact() {
         },
     ];
 
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        try {
+            const response = await fetch('/api/submit-lead', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                // Reset form
+                setFormData({
+                    name: '',
+                    phone: '',
+                    email: '',
+                    product: '',
+                    question: ''
+                });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <section
             id="contact"
@@ -51,7 +103,7 @@ export default function Contact() {
             <div className="absolute inset-0 bg-white/10" />
 
             <div className="container mx-auto px-4 relative z-10">
-                {/* Main Unified Container - Extreme transparency */}
+                {/* Main Unified Container */}
                 <div className="max-w-6xl mx-auto">
                     <div className="bg-white/40 backdrop-blur-xl rounded-[3rem] border border-white/40 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.2)] overflow-hidden">
                         <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -120,39 +172,127 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            {/* Right Side: CTA / Lead Box */}
-                            <div className="lg:col-span-5 bg-gradient-to-br from-white/10 to-transparent p-8 lg:p-16 border-l border-white/10 flex flex-col justify-center relative">
-                                {/* Decorative badge */}
+                            {/* Right Side: Lead Generation Form */}
+                            <div className="lg:col-span-5 bg-gradient-to-br from-white/10 to-transparent p-8 lg:p-12 border-l border-white/10 flex flex-col justify-center relative">
                                 <div className="absolute top-0 right-12 bg-brand-gold text-white px-6 py-2 rounded-b-2xl font-bold shadow-xl text-[10px] uppercase tracking-widest z-20">
                                     {t('cta.badge')}
                                 </div>
 
-                                <div className="text-center space-y-10 relative z-10">
-                                    <h3 className="text-3xl lg:text-4xl font-extrabold leading-tight font-serif text-slate-900 drop-shadow-sm">
-                                        {t('cta.title')}
-                                    </h3>
-
-                                    <button className="w-full bg-brand-gold hover:bg-white text-white hover:text-slate-900 font-extrabold text-lg py-5 rounded-2xl shadow-2xl hover:shadow-brand-gold/20 transition-all transform hover:-translate-y-1 active:scale-95 group">
-                                        {t('cta.button')}
-                                        <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                                    </button>
-
-                                    <div className="space-y-4">
-                                        {[0, 1, 2].map((idx) => (
-                                            <div key={idx} className="flex items-center gap-4 text-left">
-                                                <div className="bg-brand-gold/20 p-1.5 rounded-full text-brand-gold">
-                                                    <Check className="w-4 h-4" />
-                                                </div>
-                                                <span className="font-semibold text-slate-800 text-sm drop-shadow-sm">
-                                                    {t(`cta.features.${idx}`)}
-                                                </span>
-                                            </div>
-                                        ))}
+                                <div className="space-y-6 relative z-10">
+                                    <div className="text-center mb-8">
+                                        <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight font-serif text-slate-900 drop-shadow-sm mb-2">
+                                            {t('cta.title')}
+                                        </h3>
+                                        <p className="text-sm text-slate-600 font-medium">{t('cta.bottomText')}</p>
                                     </div>
 
-                                    <p className="text-xs text-gray-400 italic">
-                                        {t('cta.bottomText')}
-                                    </p>
+                                    {submitStatus === 'success' ? (
+                                        <div className="bg-green-50 border-2 border-green-500 rounded-2xl p-8 text-center">
+                                            <div className="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                <Check className="w-8 h-8 text-white" />
+                                            </div>
+                                            <p className="text-green-800 font-bold text-lg mb-2">{t('form.success')}</p>
+                                            <button
+                                                onClick={() => setSubmitStatus('idle')}
+                                                className="mt-4 text-green-700 underline text-sm"
+                                            >
+                                                Enviar otra consulta
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <form onSubmit={handleSubmit} className="space-y-4">
+                                            <div>
+                                                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.name')}</label>
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    value={formData.name}
+                                                    onChange={handleInputChange}
+                                                    placeholder={t('form.placeholder.name')}
+                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
+                                                    required
+                                                    disabled={isSubmitting}
+                                                />
+                                            </div>
+
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.phone')}</label>
+                                                    <input
+                                                        type="tel"
+                                                        name="phone"
+                                                        value={formData.phone}
+                                                        onChange={handleInputChange}
+                                                        placeholder={t('form.placeholder.phone')}
+                                                        className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
+                                                        required
+                                                        disabled={isSubmitting}
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.email')}</label>
+                                                    <input
+                                                        type="email"
+                                                        name="email"
+                                                        value={formData.email}
+                                                        onChange={handleInputChange}
+                                                        placeholder={t('form.placeholder.email')}
+                                                        className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
+                                                        disabled={isSubmitting}
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.product.label')}</label>
+                                                <select
+                                                    name="product"
+                                                    value={formData.product}
+                                                    onChange={handleInputChange}
+                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium appearance-none cursor-pointer"
+                                                    required
+                                                    disabled={isSubmitting}
+                                                >
+                                                    <option value="">-- {t('form.product.options.other')} --</option>
+                                                    <option value="medicare">{t('form.product.options.medicare')}</option>
+                                                    <option value="health">{t('form.product.options.health')}</option>
+                                                    <option value="life">{t('form.product.options.life')}</option>
+                                                    <option value="annuities">{t('form.product.options.annuities')}</option>
+                                                    <option value="retirement">{t('form.product.options.retirement')}</option>
+                                                    <option value="funeral">{t('form.product.options.funeral')}</option>
+                                                    <option value="disability">{t('form.product.options.disability')}</option>
+                                                </select>
+                                            </div>
+
+                                            <div>
+                                                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.question')}</label>
+                                                <textarea
+                                                    rows={3}
+                                                    name="question"
+                                                    value={formData.question}
+                                                    onChange={handleInputChange}
+                                                    placeholder={t('form.placeholder.question')}
+                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium resize-none"
+                                                    disabled={isSubmitting}
+                                                />
+                                            </div>
+
+                                            {submitStatus === 'error' && (
+                                                <div className="bg-red-50 border border-red-300 rounded-xl p-4 text-center">
+                                                    <p className="text-red-700 font-semibold text-sm">{t('form.error')}</p>
+                                                </div>
+                                            )}
+
+                                            <button
+                                                type="submit"
+                                                disabled={isSubmitting}
+                                                className="w-full bg-brand-gold hover:bg-slate-900 text-white font-extrabold text-lg py-4 rounded-xl shadow-xl hover:shadow-brand-gold/20 transition-all transform hover:-translate-y-1 active:scale-95 group mt-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                                            >
+                                                {isSubmitting ? t('form.submitting') : t('form.submit')}
+                                                {!isSubmitting && <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>}
+                                            </button>
+                                        </form>
+                                    )}
                                 </div>
                             </div>
 
