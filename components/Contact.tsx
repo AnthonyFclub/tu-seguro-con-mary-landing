@@ -114,7 +114,7 @@ export default function Contact() {
                                     <h2 className="text-4xl lg:text-6xl font-extrabold mb-6 text-slate-900 font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">
                                         {t('title')}
                                     </h2>
-                                    <p className="text-xl text-slate-800 font-serif max-w-lg drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)]">
+                                    <p className="text-xl text-slate-800 max-w-lg drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)]">
                                         {t('subtitle')}
                                     </p>
                                 </div>

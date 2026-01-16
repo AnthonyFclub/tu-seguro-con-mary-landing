@@ -41,7 +41,7 @@ export default function Testimonials() {
                         <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
                             {t('title')}
                         </h2>
-                        <p className="text-lg lg:text-xl text-slate-800 font-bold font-serif drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
+                        <p className="text-lg lg:text-xl text-slate-800 font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
                             {t('subtitle')}
                         </p>
                     </div>
