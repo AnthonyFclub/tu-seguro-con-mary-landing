@@ -183,7 +183,7 @@ export default function Contact() {
                                         <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight font-serif text-slate-900 drop-shadow-sm mb-2">
                                             {t('cta.title')}
                                         </h3>
-                                        <p className="text-sm text-slate-600 font-medium">{t('cta.bottomText')}</p>
+                                        {t('cta.bottomText') && <p className="text-sm text-slate-600 font-medium">{t('cta.bottomText')}</p>}
                                     </div>
 
                                     {submitStatus === 'success' ? (

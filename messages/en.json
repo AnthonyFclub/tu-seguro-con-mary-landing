@@ -103,10 +103,10 @@
       }
     },
     "cta": {
-      "title": "Schedule a free consultation today!",
+      "title": "Schedule a consultation today!",
       "button": "Contact Me Now",
       "badge": "100% Free Consultation",
-      "bottomText": "Ready to protect what matters most? Let's talk today.",
+      "bottomText": "",
       "features": [
         "No obligation",
         "Free consultation",

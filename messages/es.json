@@ -101,10 +101,10 @@
             }
         },
         "cta": {
-            "title": "¡Agenda una consulta gratuita hoy!",
+            "title": "¡Agenda una consulta hoy!",
             "button": "Contáctame Ahora",
             "badge": "Consulta 100% Gratuita",
-            "bottomText": "¿Listo para proteger lo que más importa? Hablemos hoy.",
+            "bottomText": "",
             "features": [
                 "Sin compromiso",
                 "Consulta gratuita",
