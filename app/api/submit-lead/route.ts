@@ -2,16 +2,39 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend and Supabase inside the handler or with checks to avoid build-time errors
+const getResendClient = () => {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+        console.warn('⚠️ RESEND_API_KEY is missing');
+        return null;
+    }
+    return new Resend(apiKey);
+};
 
-// Initialize Supabase with SERVICE ROLE key (bypasses RLS)
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
+const getSupabaseClient = () => {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+    if (!supabaseUrl || !supabaseServiceKey) {
+        console.warn('⚠️ Supabase credentials missing');
+        return null;
+    }
+    return createClient(supabaseUrl, supabaseServiceKey);
+};
 
 export async function POST(request: NextRequest) {
+    const resend = getResendClient();
+    const supabase = getSupabaseClient();
+
     try {
+        if (!resend || !supabase) {
+            console.error('❌ Missing environment variables');
+            return NextResponse.json(
+                { error: 'Configuración del servidor incompleta (Variables de entorno)' },
+                { status: 500 }
+            );
+        }
         const body = await request.json();
         const { name, phone, email, product, question } = body;
 
