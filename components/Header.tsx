@@ -35,13 +35,14 @@ export default function Header() {
             <div className="container mx-auto px-4">
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <div className="relative w-12 h-12 lg:w-14 lg:h-14">
+                    <Link href="/" className="flex items-center gap-4 group">
+                        <div className="relative w-20 h-20 lg:w-24 lg:h-24">
                             <Image
-                                src="/logo.png"
+                                src="/logo-header-house.png"
                                 alt="Logo"
                                 fill
                                 className="object-contain group-hover:scale-110 transition-transform"
+                                priority
                             />
                         </div>
                         <div className="flex flex-col">
