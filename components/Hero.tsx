@@ -32,12 +32,7 @@ export default function Hero() {
     return (
         <section
             id="about"
-            className="relative min-h-screen flex items-center overflow-hidden bg-center bg-no-repeat"
-            style={{
-                backgroundImage: 'url("/images/hero-bg-pastel-cubes.png")',
-                backgroundSize: '100% 100%',
-                backgroundRepeat: 'no-repeat'
-            }}
+            className="relative min-h-screen flex items-center overflow-hidden bg-brand-cream"
         >
             {/* Background Image - Using standard CSS background to avoid Next.js Image fill zooming if resolution is an issue */}
             <div className="container mx-auto px-4 pt-24 pb-8 lg:pt-32 lg:pb-12 relative z-10">

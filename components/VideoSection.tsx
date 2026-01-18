@@ -108,12 +108,7 @@ export default function VideoSection() {
 
     return (
         <section
-            className="py-16 lg:py-24 min-h-[85vh] flex items-center relative overflow-hidden bg-center bg-no-repeat"
-            style={{
-                backgroundImage: 'url("/images/hero-bg-pastel-cubes.png")',
-                backgroundSize: '100% 100%',
-                backgroundRepeat: 'no-repeat'
-            }}
+            className="py-16 lg:py-24 min-h-[85vh] flex items-center relative overflow-hidden bg-brand-cream"
         >
             <div className="container mx-auto px-4 relative z-10">
                 {/* Refined Header - Crystal Title */}

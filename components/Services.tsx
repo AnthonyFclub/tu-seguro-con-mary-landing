@@ -29,12 +29,7 @@ export default function Services() {
     return (
         <section
             id="services"
-            className="py-16 lg:py-24 relative overflow-hidden bg-center bg-no-repeat"
-            style={{
-                backgroundImage: 'url("/images/hero-bg-pastel-cubes.png")',
-                backgroundSize: '100% 100%',
-                backgroundRepeat: 'no-repeat'
-            }}
+            className="py-16 lg:py-24 relative overflow-hidden bg-brand-cream"
         >
 
             <div className="container mx-auto px-4 relative z-10">

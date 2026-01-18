@@ -92,12 +92,7 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="py-24 lg:py-32 relative overflow-hidden bg-center bg-no-repeat"
-            style={{
-                backgroundImage: 'url("/images/contact-bg-hispanic-family.png")',
-                backgroundSize: '100% 100%',
-                backgroundRepeat: 'no-repeat'
-            }}
+            className="py-24 lg:py-32 relative overflow-hidden bg-brand-cream"
         >
             {/* Light Overlay for Contrast */}
             <div className="absolute inset-0 bg-white/10" />

@@ -28,12 +28,7 @@ export default function Testimonials() {
     return (
         <section
             id="testimonials"
-            className="py-24 lg:py-32 relative overflow-hidden bg-center bg-no-repeat"
-            style={{
-                backgroundImage: 'url("/images/hero-bg-pastel-cubes.png")',
-                backgroundSize: '100% 100%',
-                backgroundRepeat: 'no-repeat'
-            }}
+            className="py-24 lg:py-32 relative overflow-hidden bg-brand-cream"
         >
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-12">
