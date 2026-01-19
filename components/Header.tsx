@@ -28,30 +28,31 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'bg-white/70 backdrop-blur-lg shadow-lg py-2'
-                : 'bg-white/40 backdrop-blur-md py-4'
+                ? 'bg-white/70 backdrop-blur-lg shadow-lg py-1.5'
+                : 'bg-white/40 backdrop-blur-md py-2.5'
                 } border-b border-white/20`}
         >
             <div className="container mx-auto px-4">
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-4 group">
-                        <div className="relative w-20 h-20 lg:w-24 lg:h-24">
+                    <Link href="/" className="flex items-center gap-2 lg:gap-3 group">
+                        <div className="relative w-14 h-14 lg:w-20 lg:h-20">
                             <Image
-                                src="/logo-header-house.png"
-                                alt="Logo"
+                                src="/header-house.png"
+                                alt="Logo Casa"
                                 fill
-                                className="object-contain group-hover:scale-110 transition-transform"
+                                className="object-contain"
                                 priority
                             />
                         </div>
-                        <div className="flex flex-col">
-                            <span className="text-3xl lg:text-4xl font-normal text-brand-blue leading-tight font-[family-name:var(--font-great-vibes)]">
-                                Tú Seguro con Mary
-                            </span>
-                            <span className="text-[10px] lg:text-xs font-bold text-brand-gold tracking-widest uppercase drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
-                                PROTECT WHAT MATTERS MOST
-                            </span>
+                        <div className="relative w-44 h-16 lg:w-60 lg:h-20">
+                            <Image
+                                src="/header-text.png"
+                                alt="Tú Seguro con Mary"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </div>
                     </Link>
 
@@ -61,7 +62,7 @@ export default function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-sm font-semibold text-gray-700 hover:text-brand-blue transition-colors"
+                                className="text-sm font-bold text-brand-dark-blue hover:text-brand-gold transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(184,134,11,0.6)]"
                             >
                                 {item.label}
                             </Link>
@@ -71,7 +72,7 @@ export default function Header() {
 
                         <Link
                             href="#contact"
-                            className="bg-brand-blue/80 backdrop-blur-md text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-brand-blue/90 transition-all shadow-md hover:shadow-lg border border-white/20"
+                            className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-[0_0_15px_rgba(184,134,11,0.4)] hover:scale-105 border border-white/20"
                         >
                             {t('cta')}
                         </Link>

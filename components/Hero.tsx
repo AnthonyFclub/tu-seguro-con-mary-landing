@@ -40,35 +40,35 @@ export default function Hero() {
 
                     {/* Column Left: Content - Unified in a Glass Panel */}
                     <div className="lg:col-span-7 animate-in fade-in slide-in-from-left duration-1000">
-                        <div className="bg-white/10 backdrop-blur-xl p-6 lg:p-10 rounded-[3rem] border border-white/20 shadow-2xl space-y-6">
+                        <div className="space-y-6">
                             <div className="space-y-2">
-                                <h1 className="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
+                                <h1 className="text-4xl lg:text-7xl font-extrabold text-brand-dark-blue leading-tight font-serif">
                                     {t('headline')}
                                 </h1>
-                                <h2 className="text-xl lg:text-2xl font-bold text-slate-800 font-serif drop-shadow-[0_1px_1px_rgba(255,255,255,0.5)]">
+                                <h2 className="text-xl lg:text-3xl font-bold text-brand-dark-blue/90 font-serif">
                                     {t('subheadline')}
                                 </h2>
                             </div>
 
-                            <p className="text-lg lg:text-xl text-black leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
+                            <p className="text-lg lg:text-xl text-brand-dark-blue leading-relaxed font-medium">
                                 {t('description')}
                             </p>
 
-                            {/* Stats - Crystal effect badges */}
-                            <div className="flex flex-wrap gap-3">
+                            {/* Stats - Interactive badges */}
+                            <div className="flex flex-wrap gap-4">
                                 {stats.map((stat, i) => (
-                                    <div key={i} className="flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-xl rounded-xl shadow-lg border border-white/20 hover:bg-white/20 transition-all">
-                                        <span className="text-brand-blue">{stat.icon}</span>
-                                        <span className="text-sm font-bold text-slate-900">{stat.label}</span>
+                                    <div key={i} className="flex items-center gap-3 px-6 py-3 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:scale-105 hover:bg-white transition-all duration-300">
+                                        <span className="text-brand-dark-blue">{stat.icon}</span>
+                                        <span className="text-sm font-bold text-brand-dark-blue">{stat.label}</span>
                                     </div>
                                 ))}
                             </div>
 
-                            {/* Actions - Single prominent button with crystal effect */}
-                            <div className="flex flex-wrap gap-4 pt-2">
+                            {/* Actions - Single prominent button with resalte effect */}
+                            <div className="flex flex-wrap gap-4 pt-4">
                                 <Link
                                     href="#services"
-                                    className="bg-white/10 backdrop-blur-xl hover:bg-white/20 text-slate-900 px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95 border border-white/20 flex items-center gap-3 group"
+                                    className="bg-white/80 backdrop-blur-sm hover:bg-white text-brand-dark-blue px-10 py-4 rounded-2xl font-bold text-lg shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:scale-105 transition-all duration-300 active:scale-95 flex items-center gap-3 group"
                                 >
                                     {t('buttons.services')}
                                     <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
