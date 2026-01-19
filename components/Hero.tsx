@@ -2,13 +2,6 @@ import { useTranslations } from 'next-intl';
 import { CheckCircle2, MessageCircle, Facebook, Instagram, Mail } from 'lucide-react';
 import { Link } from '@/navigation';
 import Image from 'next/image';
-import { Montserrat } from 'next/font/google';
-
-const montserrat = Montserrat({
-    subsets: ["latin"],
-    weight: ['400', '500', '600', '700', '800', '900']
-});
-
 export default function Hero() {
     const t = useTranslations('Hero');
 
@@ -48,7 +41,7 @@ export default function Hero() {
                     <div className="lg:col-span-7 animate-in fade-in slide-in-from-left duration-1000">
                         <div className="space-y-6">
                             <div className="space-y-2">
-                                <h1 className={`${montserrat.className} text-4xl lg:text-7xl text-brand-dark-blue leading-tight tracking-tight`}>
+                                <h1 className="text-4xl lg:text-7xl text-brand-dark-blue leading-tight font-serif font-extrabold tracking-tight">
                                     {t('headline')}
                                 </h1>
                                 <h2 className="text-xl lg:text-3xl font-bold text-brand-dark-blue/90 font-alice">
@@ -74,7 +67,6 @@ export default function Hero() {
 
                                 {/* Quick Socials - Centered or aligned with content */}
                                 <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-brand-dark-blue/5">
-                                    <span className="text-sm font-bold text-brand-dark-blue/60 uppercase tracking-widest">{t('socialsLabel') || 'Conecta:'}</span>
                                     <div className="flex items-center gap-3">
                                         {socialIcons.map((social, i) => (
                                             <a

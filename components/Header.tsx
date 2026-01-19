@@ -28,15 +28,15 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'bg-white/70 backdrop-blur-lg shadow-[0_4px_20px_rgba(184,134,11,0.1)] py-1.5'
-                : 'bg-white/40 backdrop-blur-md py-2.5 shadow-[0_1px_10px_rgba(184,134,11,0.05)]'
+                ? 'bg-white/70 backdrop-blur-lg shadow-[0_4px_20px_rgba(184,134,11,0.1)] py-0.5'
+                : 'bg-white/40 backdrop-blur-md py-1 shadow-[0_1px_10px_rgba(184,134,11,0.05)]'
                 } border-b border-brand-gold/15`}
         >
             <div className="container mx-auto px-4">
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 lg:gap-3 group">
-                        <div className="relative w-14 h-14 lg:w-20 lg:h-20">
+                    <Link href="/" className="flex items-center gap-0 group">
+                        <div className="relative w-14 h-14 lg:w-20 lg:h-20 -mr-1 lg:-mr-2">
                             <Image
                                 src="/header-house.png"
                                 alt="Logo Casa"
@@ -45,7 +45,7 @@ export default function Header() {
                                 priority
                             />
                         </div>
-                        <div className="relative w-44 h-16 lg:w-60 lg:h-20">
+                        <div className="relative w-44 h-16 lg:w-64 lg:h-[75px]">
                             <Image
                                 src="/header-text.png"
                                 alt="Tú Seguro con Mary"
