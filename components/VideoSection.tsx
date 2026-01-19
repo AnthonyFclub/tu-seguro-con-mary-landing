@@ -111,13 +111,12 @@ export default function VideoSection() {
             className="py-16 lg:py-24 min-h-[85vh] flex items-center relative overflow-hidden bg-brand-cream"
         >
             <div className="container mx-auto px-4 relative z-10">
-                {/* Refined Header - Crystal Title */}
-                <div className="max-w-md mx-auto text-center mb-10">
-                    <div className="bg-white/10 backdrop-blur-xl p-5 rounded-[2.5rem] border border-white/20 shadow-xl">
-                        <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
-                            {t('title')}
-                        </h2>
-                    </div>
+                {/* Harmonized Header - Silhouette Effect */}
+                <div className="mb-12 text-center max-w-4xl mx-auto space-y-4">
+                    <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-dark-blue leading-tight transition-all font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
+                        {t('title')}
+                    </h2>
+                    <div className="w-24 h-0.5 bg-brand-gold/40 mx-auto rounded-full shadow-[0_0_10px_rgba(184,134,11,0.2)]" />
                 </div>
 
                 <div className="max-w-6xl mx-auto">
@@ -157,6 +156,6 @@ export default function VideoSection() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

@@ -92,7 +92,7 @@ export default function Hero() {
                             {/* Decorative Frame */}
                             <div className="absolute inset-0 border-2 border-brand-gold/30 rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
 
-                            <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-2xl border-4 border-white">
+                            <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-[0_0_50px_rgba(184,134,11,0.3)] border-4 border-white">
                                 <Image
                                     src="/images/mary-carmen.jpg"
                                     alt={t('imageAlt')}

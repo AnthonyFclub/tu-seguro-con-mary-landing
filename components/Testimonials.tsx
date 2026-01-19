@@ -31,15 +31,14 @@ export default function Testimonials() {
             className="py-24 lg:py-32 relative overflow-hidden bg-brand-cream"
         >
             <div className="container mx-auto px-4 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <div className="bg-white/10 backdrop-blur-xl p-6 lg:p-8 rounded-[2.5rem] border border-white/20 shadow-xl space-y-2">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
-                            {t('title')}
-                        </h2>
-                        <p className="text-lg lg:text-xl text-slate-800 font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
-                            {t('subtitle')}
-                        </p>
-                    </div>
+                <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-dark-blue leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
+                        {t('title')}
+                    </h2>
+                    <div className="w-24 h-0.5 bg-brand-gold/40 mx-auto rounded-full shadow-[0_0_10px_rgba(184,134,11,0.2)]" />
+                    <p className="text-lg lg:text-xl text-brand-dark-blue font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
+                        {t('subtitle')}
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

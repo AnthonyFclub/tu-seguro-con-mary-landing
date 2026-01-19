@@ -34,15 +34,14 @@ export default function Services() {
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header - Harmonized Crystal Effect */}
-                <div className="max-w-4xl mb-12 mx-auto text-center">
-                    <div className="bg-white/10 backdrop-blur-xl p-8 lg:p-10 rounded-[3rem] border border-brand-gold/20 shadow-[0_0_25px_rgba(184,134,11,0.15)] space-y-3">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-dark-blue leading-tight transition-all font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
-                            {t('title')}
-                        </h2>
-                        <p className="text-lg lg:text-xl text-brand-dark-blue font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
-                            {t('subtitle')}
-                        </p>
-                    </div>
+                <div className="mb-16 lg:mb-20 text-center max-w-4xl mx-auto space-y-4">
+                    <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-dark-blue leading-tight transition-all font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
+                        {t('title')}
+                    </h2>
+                    <div className="w-24 h-0.5 bg-brand-gold/40 mx-auto rounded-full shadow-[0_0_10px_rgba(184,134,11,0.2)]" />
+                    <p className="text-lg lg:text-xl text-brand-dark-blue font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
+                        {t('subtitle')}
+                    </p>
                 </div>
 
                 {/* Services Grid */}
