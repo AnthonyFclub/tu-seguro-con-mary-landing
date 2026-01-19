@@ -121,28 +121,15 @@ export default function VideoSection() {
 
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center">
-                        {/* Left: Brand Crystal Panel */}
-                        <div className="bg-white/20 backdrop-blur-xl p-8 lg:p-12 rounded-[3.5rem] border border-white/30 shadow-2xl flex flex-col items-center justify-center text-center">
-                            {/* Logo */}
-                            <div className="relative w-full max-w-[320px] aspect-square flex items-center justify-center mb-6">
+                        <div className="flex items-center justify-center">
+                            <div className="relative w-full max-w-[420px] aspect-square transform hover:scale-[1.03] transition-all duration-500 group">
                                 <Image
-                                    src="/logo.png"
-                                    alt="Tú Seguro con Mary Logo"
-                                    width={320}
-                                    height={320}
-                                    className="object-contain w-full h-full drop-shadow-2xl"
+                                    src="/video-logo.png"
+                                    alt="Tu Seguro con Mary - Integrated Logo"
+                                    fill
+                                    className="object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_30px_rgba(184,134,11,0.3)] group-hover:brightness-110 transition-all duration-500"
+                                    priority
                                 />
-                            </div>
-
-                            {/* Brand Text */}
-                            <div className="space-y-4">
-                                <h3 className="text-4xl lg:text-5xl font-normal text-brand-blue leading-tight font-[family-name:var(--font-great-vibes)] drop-shadow-sm">
-                                    Tú Seguro con Mary
-                                </h3>
-                                <div className="h-1.5 w-24 bg-brand-gold/60 mx-auto rounded-full" />
-                                <p className="text-sm lg:text-lg font-bold text-brand-gold uppercase tracking-[0.15em] [text-shadow:1px_1px_0_rgba(255,255,255,0.4),-1px_-1px_0_rgba(255,255,255,0.4),1px_-1px_0_rgba(255,255,255,0.4),-1px_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.3)]">
-                                    PROTECT WHAT MATTERS MOST
-                                </p>
                             </div>
                         </div>
 
