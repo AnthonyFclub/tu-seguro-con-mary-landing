@@ -42,10 +42,10 @@ export default function Hero() {
                     <div className="lg:col-span-7 animate-in fade-in slide-in-from-left duration-1000">
                         <div className="space-y-6">
                             <div className="space-y-2">
-                                <h1 className="text-4xl lg:text-7xl font-extrabold text-brand-dark-blue leading-tight font-serif">
+                                <h1 className="text-4xl lg:text-7xl text-brand-dark-blue leading-tight font-birthstone">
                                     {t('headline')}
                                 </h1>
-                                <h2 className="text-xl lg:text-3xl font-bold text-brand-dark-blue/90 font-serif">
+                                <h2 className="text-xl lg:text-3xl font-bold text-brand-dark-blue/90 font-alice">
                                     {t('subheadline')}
                                 </h2>
                             </div>
@@ -54,41 +54,36 @@ export default function Hero() {
                                 {t('description')}
                             </p>
 
-                            {/* Stats - Interactive badges */}
-                            <div className="flex flex-wrap gap-4">
-                                {stats.map((stat, i) => (
-                                    <div key={i} className="flex items-center gap-3 px-6 py-3 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:scale-105 hover:bg-white transition-all duration-300">
-                                        <span className="text-brand-dark-blue">{stat.icon}</span>
-                                        <span className="text-sm font-bold text-brand-dark-blue">{stat.label}</span>
+                            {/* Stats & Socials - Unified layout for harmony */}
+                            <div className="space-y-8 pt-4">
+                                {/* Stats - Responsive grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    {stats.map((stat, i) => (
+                                        <div key={i} className="flex flex-col items-center justify-center text-center gap-2 px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.2)] hover:scale-105 hover:bg-white transition-all duration-300">
+                                            <span className="text-brand-dark-blue p-2 bg-brand-dark-blue/5 rounded-full">{stat.icon}</span>
+                                            <span className="text-xs font-bold text-brand-dark-blue uppercase tracking-wider">{stat.label}</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Quick Socials - Centered or aligned with content */}
+                                <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-brand-dark-blue/5">
+                                    <span className="text-sm font-bold text-brand-dark-blue/60 uppercase tracking-widest">{t('socialsLabel') || 'Conecta:'}</span>
+                                    <div className="flex items-center gap-3">
+                                        {socialIcons.map((social, i) => (
+                                            <a
+                                                key={i}
+                                                href={social.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`${social.color} p-2 rounded-full text-white shadow-md hover:scale-110 hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center`}
+                                                title={social.label}
+                                            >
+                                                {social.icon}
+                                            </a>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
-
-                            {/* Actions - Single prominent button with resalte effect */}
-                            <div className="flex flex-wrap gap-4 pt-4">
-                                <Link
-                                    href="#services"
-                                    className="bg-white/80 backdrop-blur-sm hover:bg-white text-brand-dark-blue px-10 py-4 rounded-2xl font-bold text-lg shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:scale-105 transition-all duration-300 active:scale-95 flex items-center gap-3 group"
-                                >
-                                    {t('buttons.services')}
-                                    <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
-                                </Link>
-                            </div>
-
-                            {/* Quick Socials */}
-                            <div className="flex items-center gap-4 pt-2">
-                                {socialIcons.map((social, i) => (
-                                    <a
-                                        key={i}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`${social.color} p-2.5 rounded-full text-white shadow-md hover:scale-110 transition-transform active:scale-90 flex items-center justify-center`}
-                                        title={social.label}
-                                    >
-                                        {social.icon}
-                                    </a>
-                                ))}
+                                </div>
                             </div>
                         </div>
                     </div>

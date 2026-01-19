@@ -28,9 +28,9 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'bg-white/70 backdrop-blur-lg shadow-lg py-1.5'
-                : 'bg-white/40 backdrop-blur-md py-2.5'
-                } border-b border-white/20`}
+                ? 'bg-white/70 backdrop-blur-lg shadow-[0_4px_20px_rgba(184,134,11,0.1)] py-1.5'
+                : 'bg-white/40 backdrop-blur-md py-2.5 shadow-[0_1px_10px_rgba(184,134,11,0.05)]'
+                } border-b border-brand-gold/15`}
         >
             <div className="container mx-auto px-4">
                 <nav className="flex items-center justify-between">
@@ -62,7 +62,7 @@ export default function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-sm font-bold text-brand-dark-blue hover:text-brand-gold transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(184,134,11,0.6)]"
+                                className="text-sm font-bold font-alice text-brand-dark-blue hover:text-brand-gold transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(184,134,11,0.6)]"
                             >
                                 {item.label}
                             </Link>
@@ -72,7 +72,7 @@ export default function Header() {
 
                         <Link
                             href="#contact"
-                            className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-[0_0_15px_rgba(184,134,11,0.4)] hover:scale-105 border border-white/20"
+                            className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-6 py-2 rounded-xl font-bold font-alice text-sm transition-all shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_25px_rgba(184,134,11,0.5)] hover:scale-105 border border-white/20"
                         >
                             {t('cta')}
                         </Link>

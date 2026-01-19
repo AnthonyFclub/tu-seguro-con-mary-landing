@@ -12,6 +12,8 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
   --font-mono: var(--font-geist-mono);
+  --font-alice: var(--font-alice), serif;
+  --font-birthstone: var(--font-birthstone), cursive;
   --color-brand-blue: #00458b;
   --color-brand-dark-blue: #0b2454;
   --color-brand-gold: #b8860b;
