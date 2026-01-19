@@ -14,6 +14,7 @@
   --font-mono: var(--font-geist-mono);
   --font-alice: var(--font-alice), serif;
   --font-birthstone: var(--font-birthstone), cursive;
+  --font-montserrat: var(--font-montserrat), sans-serif;
   --color-brand-blue: #00458b;
   --color-brand-dark-blue: #0b2454;
   --color-brand-gold: #b8860b;
@@ -34,4 +35,8 @@ html {
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--color-brand-cream);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif;
 }

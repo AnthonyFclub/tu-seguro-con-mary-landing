@@ -35,11 +35,11 @@ export default function Services() {
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header - Harmonized Crystal Effect */}
                 <div className="max-w-4xl mb-12 mx-auto text-center">
-                    <div className="bg-white/10 backdrop-blur-xl p-8 lg:p-10 rounded-[3rem] border border-white/20 shadow-2xl space-y-3">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight transition-all font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
+                    <div className="bg-white/10 backdrop-blur-xl p-8 lg:p-10 rounded-[3rem] border border-brand-gold/20 shadow-[0_0_25px_rgba(184,134,11,0.15)] space-y-3">
+                        <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-dark-blue leading-tight transition-all font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
                             {t('title')}
                         </h2>
-                        <p className="text-lg lg:text-xl text-slate-800 font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
+                        <p className="text-lg lg:text-xl text-brand-dark-blue font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
                             {t('subtitle')}
                         </p>
                     </div>
@@ -50,7 +50,7 @@ export default function Services() {
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className={`group relative overflow-hidden bg-slate-50 rounded-3xl pt-8 pb-12 px-6 lg:px-10 border border-slate-100 shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center`}
+                            className={`group relative overflow-hidden bg-slate-50 rounded-3xl pt-8 pb-12 px-6 lg:px-10 border border-slate-100 shadow-sm hover:shadow-[0_0_30px_rgba(184,134,11,0.3)] hover:border-brand-gold/30 hover:bg-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center`}
                         >
                             {/* Clear Background Image */}
                             <div className="absolute inset-0 z-0">
@@ -68,14 +68,14 @@ export default function Services() {
                                     {service.icon}
                                 </div>
 
-                                <h3 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-2 font-serif drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+                                <h3 className="text-3xl lg:text-4xl font-extrabold text-brand-dark-blue mb-2 font-serif drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
                                     {service.title}
                                 </h3>
                                 <div className={`w-12 h-1 rounded-full ${service.id === 'health' ? 'bg-pink-500' : 'bg-brand-blue'} mb-8 opacity-60`} />
 
                                 <ul className="space-y-5 w-full">
                                     {service.items.map((item, idx) => (
-                                        <li key={idx} className="flex items-center gap-3 text-slate-900 font-bold justify-center text-lg lg:text-xl drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] group/item">
+                                        <li key={idx} className="flex items-center gap-3 text-brand-dark-blue font-bold justify-center text-lg lg:text-xl drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] group/item">
                                             <div className={`w-2 h-2 rounded-full flex-shrink-0 shadow-sm transition-transform group-hover/item:scale-125 ${service.id === 'health' ? 'bg-pink-500/80' : 'bg-brand-blue/80'}`} />
                                             <span className="leading-tight">{item}</span>
                                         </li>
