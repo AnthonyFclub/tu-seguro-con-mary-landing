@@ -118,6 +118,7 @@
             "email": "Correo Electrónico",
             "product": {
                 "label": "Producto de Interés",
+                "placeholder": "Seleccionar...",
                 "options": {
                     "medicare": "Medicare",
                     "health": "Seguro de Salud / ACA",
@@ -182,7 +183,7 @@
         "badges": {
             "licensed": "Licenciada en California",
             "bilingual": "Servicio Bilingüe",
-            "experience": "Protegiendo familias desde 2015"
+            "experience": "Protegiendo familias desde 2005"
         },
         "disclaimer": "No ofrecemos todos los planes disponibles en su área. Cualquier información que proporcionemos se limita a los planes que sí ofrecemos en su área. Comuníquese con Medicare.gov o al 1-800-MEDICARE para obtener información sobre todas sus opciones."
     }

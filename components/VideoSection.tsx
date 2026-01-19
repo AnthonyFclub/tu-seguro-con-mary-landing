@@ -38,7 +38,7 @@ export default function VideoSection() {
     useEffect(() => {
         if (!isApiLoaded || !containerRef.current) return;
 
-        const videoId = 'iakNXZzJbds';
+        const videoId = 'aQkmYCOcDEo';
 
         // Initialize Player - Always muted for reliable autoplay
         const player = new window.YT.Player('youtube-player', {
@@ -136,7 +136,7 @@ export default function VideoSection() {
                         {/* Right: Larger Video Container for Balance */}
                         <div
                             ref={containerRef}
-                            className="relative aspect-video w-full rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.5)] border-4 border-white bg-black transform hover:scale-[1.01] transition-transform duration-500"
+                            className="relative aspect-video w-full rounded-[2.5rem] overflow-hidden shadow-[0_0_80px_rgba(184,134,11,0.35)] border-4 border-white bg-black transform hover:scale-[1.01] transition-transform duration-500"
                         >
                             <div id="youtube-player" className="w-full h-full" />
                         </div>

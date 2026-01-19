@@ -22,7 +22,7 @@ export default function Contact() {
             label: t('methods.whatsapp.label'),
             value: '+1 (818) 612-8196',
             button: t('methods.whatsapp.button'),
-            color: 'bg-[#25D366]',
+            color: 'bg-gradient-to-br from-[#B8860B] via-[#DAA520] to-[#B8860B]',
             href: 'https://wa.me/18186128196',
         },
         {
@@ -30,7 +30,7 @@ export default function Contact() {
             label: t('methods.email.label'),
             value: 'agentmary1997@gmail.com',
             button: t('methods.email.button'),
-            color: 'bg-blue-600',
+            color: 'bg-gradient-to-br from-[#B8860B] via-[#DAA520] to-[#B8860B]',
             href: 'mailto:agentmary1997@gmail.com',
         },
     ];
@@ -100,35 +100,35 @@ export default function Contact() {
             <div className="container mx-auto px-4 relative z-10">
                 {/* Main Unified Container */}
                 <div className="max-w-6xl mx-auto">
-                    <div className="bg-white/40 backdrop-blur-xl rounded-[3rem] border border-white/40 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.2)] overflow-hidden">
+                    <div className="bg-white/40 backdrop-blur-xl rounded-[3rem] border border-white/40 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.2),0_0_60px_rgba(184,134,11,0.12)] overflow-hidden">
                         <div className="grid grid-cols-1 lg:grid-cols-12">
 
                             {/* Left Side: Contact Information */}
                             <div className="lg:col-span-7 p-8 lg:p-16 space-y-12">
                                 <div>
-                                    <h2 className="text-4xl lg:text-6xl font-extrabold mb-6 text-slate-900 font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">
+                                    <h2 className="text-4xl lg:text-6xl font-extrabold mb-6 text-brand-dark-blue font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">
                                         {t('title')}
                                     </h2>
-                                    <p className="text-xl text-slate-800 max-w-lg drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)]">
+                                    <p className="text-xl text-brand-dark-blue/90 max-w-lg drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)]">
                                         {t('subtitle')}
                                     </p>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
                                     {contactMethods.map((method, i) => (
-                                        <div key={i} className="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
-                                            <div className={`${method.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
-                                                <div className="text-white">
+                                        <div key={i} className="bg-white/40 backdrop-blur-md p-8 rounded-3xl border border-white/20 hover:bg-white/60 transition-all duration-300 group flex flex-col h-full shadow-sm hover:shadow-md">
+                                            <div className={`${method.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-[0_10px_20px_rgba(184,134,11,0.3)] group-hover:scale-110 group-hover:shadow-[0_15px_30px_rgba(184,134,11,0.4)] transition-all duration-300`}>
+                                                <div className="text-white drop-shadow-md">
                                                     {method.icon}
                                                 </div>
                                             </div>
                                             <p className="text-brand-gold font-bold text-[10px] mb-2 uppercase tracking-[0.2em] drop-shadow-sm">{method.label}</p>
-                                            <p className="text-lg lg:text-xl font-bold mb-6 text-slate-900 break-all leading-tight drop-shadow-sm">{method.value}</p>
+                                            <p className="text-lg lg:text-xl font-bold mb-8 text-brand-dark-blue break-all leading-tight drop-shadow-sm">{method.value}</p>
                                             <a
                                                 href={method.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="w-full bg-slate-900/10 hover:bg-slate-900 text-slate-900 hover:text-white font-bold py-3 px-4 rounded-xl transition-all text-center inline-block text-sm border border-slate-900/10"
+                                                className="w-full mt-auto bg-brand-dark-blue/10 hover:bg-brand-dark-blue text-brand-dark-blue hover:text-white font-bold py-3.5 px-4 rounded-xl transition-all text-center inline-block text-sm border border-brand-dark-blue/10"
                                             >
                                                 {method.button}
                                             </a>
@@ -137,19 +137,19 @@ export default function Contact() {
                                 </div>
 
                                 {/* Bottom Info Bar */}
-                                <div className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-8 border-t border-white/10">
+                                <div className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-8 border-t border-brand-dark-blue/10">
                                     <div className="flex items-center gap-4">
                                         <div className="bg-brand-gold/20 p-3 rounded-xl border border-brand-gold/30">
                                             <MapPin className="w-6 h-6 text-brand-gold" />
                                         </div>
                                         <div>
-                                            <p className="font-bold text-stone-400 uppercase tracking-widest text-[9px] mb-0.5">{t('methods.location.label')}</p>
-                                            <p className="text-slate-900 text-lg font-bold drop-shadow-sm">{t('methods.location.value')}</p>
+                                            <p className="font-bold text-brand-dark-blue/40 uppercase tracking-widest text-[9px] mb-0.5">{t('methods.location.label')}</p>
+                                            <p className="text-brand-dark-blue text-lg font-bold drop-shadow-sm">{t('methods.location.value')}</p>
                                         </div>
                                     </div>
 
                                     <div className="flex flex-col gap-3">
-                                        <p className="font-bold text-gray-400 uppercase tracking-widest text-[9px] text-center sm:text-left">{t('methods.social.title')}</p>
+                                        <p className="font-bold text-brand-dark-blue/40 uppercase tracking-widest text-[9px] text-center sm:text-left">{t('methods.social.title')}</p>
                                         <div className="flex gap-5">
                                             {socialLinks.map((social, i) => (
                                                 <a
@@ -157,7 +157,7 @@ export default function Contact() {
                                                     href={social.href}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className={`text-slate-900/60 ${social.color} transition-all transform hover:scale-125`}
+                                                    className={`text-brand-dark-blue/60 ${social.color} transition-all transform hover:scale-125`}
                                                 >
                                                     <div className="w-5 h-5">{social.icon}</div>
                                                 </a>
@@ -175,10 +175,10 @@ export default function Contact() {
 
                                 <div className="space-y-6 relative z-10">
                                     <div className="text-center mb-8">
-                                        <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight font-serif text-slate-900 drop-shadow-sm mb-2">
+                                        <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight font-serif text-brand-dark-blue drop-shadow-sm mb-2">
                                             {t('cta.title')}
                                         </h3>
-                                        {t('cta.bottomText') && <p className="text-sm text-slate-600 font-medium">{t('cta.bottomText')}</p>}
+                                        {t('cta.bottomText') && <p className="text-sm text-brand-dark-blue/70 font-medium">{t('cta.bottomText')}</p>}
                                     </div>
 
                                     {submitStatus === 'success' ? (
@@ -197,14 +197,14 @@ export default function Contact() {
                                     ) : (
                                         <form onSubmit={handleSubmit} className="space-y-4">
                                             <div>
-                                                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.name')}</label>
+                                                <label className="block text-[10px] font-bold text-brand-dark-blue/60 uppercase tracking-widest mb-1.5 ml-1">{t('form.name')}</label>
                                                 <input
                                                     type="text"
                                                     name="name"
                                                     value={formData.name}
                                                     onChange={handleInputChange}
                                                     placeholder={t('form.placeholder.name')}
-                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
+                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-brand-dark-blue placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
                                                     required
                                                     disabled={isSubmitting}
                                                 />
@@ -212,43 +212,43 @@ export default function Contact() {
 
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div>
-                                                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.phone')}</label>
+                                                    <label className="block text-[10px] font-bold text-brand-dark-blue/60 uppercase tracking-widest mb-1.5 ml-1">{t('form.phone')}</label>
                                                     <input
                                                         type="tel"
                                                         name="phone"
                                                         value={formData.phone}
                                                         onChange={handleInputChange}
                                                         placeholder={t('form.placeholder.phone')}
-                                                        className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
+                                                        className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-brand-dark-blue placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
                                                         required
                                                         disabled={isSubmitting}
                                                     />
                                                 </div>
                                                 <div>
-                                                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.email')}</label>
+                                                    <label className="block text-[10px] font-bold text-brand-dark-blue/60 uppercase tracking-widest mb-1.5 ml-1">{t('form.email')}</label>
                                                     <input
                                                         type="email"
                                                         name="email"
                                                         value={formData.email}
                                                         onChange={handleInputChange}
                                                         placeholder={t('form.placeholder.email')}
-                                                        className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
+                                                        className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-brand-dark-blue placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium"
                                                         disabled={isSubmitting}
                                                     />
                                                 </div>
                                             </div>
 
                                             <div>
-                                                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.product.label')}</label>
+                                                <label className="block text-[10px] font-bold text-brand-dark-blue/60 uppercase tracking-widest mb-1.5 ml-1">{t('form.product.label')}</label>
                                                 <select
                                                     name="product"
                                                     value={formData.product}
                                                     onChange={handleInputChange}
-                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium appearance-none cursor-pointer"
+                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-brand-dark-blue focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium appearance-none cursor-pointer"
                                                     required
                                                     disabled={isSubmitting}
                                                 >
-                                                    <option value="">-- {t('form.product.options.other')} --</option>
+                                                    <option value="" disabled hidden>{t('form.product.placeholder')}</option>
                                                     <option value="medicare">{t('form.product.options.medicare')}</option>
                                                     <option value="health">{t('form.product.options.health')}</option>
                                                     <option value="life">{t('form.product.options.life')}</option>
@@ -256,18 +256,19 @@ export default function Contact() {
                                                     <option value="retirement">{t('form.product.options.retirement')}</option>
                                                     <option value="funeral">{t('form.product.options.funeral')}</option>
                                                     <option value="disability">{t('form.product.options.disability')}</option>
+                                                    <option value="other">{t('form.product.options.other')}</option>
                                                 </select>
                                             </div>
 
                                             <div>
-                                                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">{t('form.question')}</label>
+                                                <label className="block text-[10px] font-bold text-brand-dark-blue/60 uppercase tracking-widest mb-1.5 ml-1">{t('form.question')}</label>
                                                 <textarea
                                                     rows={3}
                                                     name="question"
                                                     value={formData.question}
                                                     onChange={handleInputChange}
                                                     placeholder={t('form.placeholder.question')}
-                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium resize-none"
+                                                    className="w-full bg-white/50 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-3 text-brand-dark-blue placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold/50 transition-all font-medium resize-none"
                                                     disabled={isSubmitting}
                                                 />
                                             </div>
@@ -281,7 +282,7 @@ export default function Contact() {
                                             <button
                                                 type="submit"
                                                 disabled={isSubmitting}
-                                                className="w-full bg-brand-gold hover:bg-slate-900 text-white font-extrabold text-lg py-4 rounded-xl shadow-xl hover:shadow-brand-gold/20 transition-all transform hover:-translate-y-1 active:scale-95 group mt-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                                                className="w-full bg-brand-gold hover:bg-brand-dark-blue text-white font-extrabold text-lg py-4 rounded-xl shadow-xl hover:shadow-brand-gold/20 transition-all transform hover:-translate-y-1 active:scale-95 group mt-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                                             >
                                                 {isSubmitting ? t('form.submitting') : t('form.submit')}
                                                 {!isSubmitting && <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>}

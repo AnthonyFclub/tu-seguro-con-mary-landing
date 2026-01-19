@@ -45,7 +45,7 @@ export default function Testimonials() {
                     {testimonials.map((item, i) => (
                         <div
                             key={i}
-                            className="bg-white/35 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/30 shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:scale-[1.03] flex flex-col justify-between group"
+                            className="bg-white/35 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/30 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1),0_0_30px_rgba(184,134,11,0.1)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.15),0_0_50px_rgba(184,134,11,0.2)] transition-all duration-500 hover:scale-[1.03] flex flex-col justify-between group"
                         >
                             <div>
                                 {/* Brand Gold Stars */}

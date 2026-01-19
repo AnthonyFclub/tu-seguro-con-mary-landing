@@ -18,13 +18,25 @@ export default function Footer() {
 
                     {/* Column 1: Branding (Spans 4) */}
                     <div className="lg:col-span-4 space-y-8">
-                        <div className="flex items-center gap-3">
-                            <div className="relative w-16 h-16 flex items-center justify-center bg-white/5 rounded-2xl p-2 border border-white/10 shadow-inner">
-                                <Image src="/logo.png" alt="Logo" width={64} height={64} className="object-contain" />
+                        <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-12">
+                            {/* House/Family Icon - Resized for perfect balance with text */}
+                            <div className="relative w-20 h-20 lg:w-24 lg:h-24 shrink-0">
+                                <Image
+                                    src="/footer-family-logo.png"
+                                    alt="Family Protection Logo"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
-                            <div>
-                                <p className="text-3xl font-normal text-white tracking-tight leading-none mb-2 font-[family-name:var(--font-great-vibes)]">Tú Seguro con Mary</p>
-                                <p className="text-[10px] text-brand-gold font-bold uppercase tracking-widest opacity-90">PROTECT WHAT MATTERS MOST</p>
+
+                            {/* Text Branding - Sized to match icon height for symmetry */}
+                            <div className="relative w-[300px] h-[75px] lg:w-[400px] lg:h-[100px]">
+                                <Image
+                                    src="/footer-logo-text.png"
+                                    alt="Tú Seguro con Mary - Branding"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                         </div>
                         <p className="text-sm leading-relaxed max-w-sm text-gray-400 font-medium">
@@ -107,11 +119,6 @@ export default function Footer() {
 
                 {/* Footer Bottom: Disclaimer & Copyright */}
                 <div className="mt-16 space-y-10">
-                    <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl">
-                        <p className="text-[11px] leading-relaxed text-center text-gray-500 font-medium max-w-5xl mx-auto italic">
-                            {t('disclaimer')}
-                        </p>
-                    </div>
 
                     <div className="flex flex-col lg:flex-row justify-between items-center gap-8 pt-4">
                         <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] font-bold uppercase tracking-widest text-brand-gold/60">
