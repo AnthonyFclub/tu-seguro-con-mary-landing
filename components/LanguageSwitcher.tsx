@@ -1,18 +1,25 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/navigation';
+import { usePathname } from 'next/navigation';
 import { Globe } from 'lucide-react';
 
 export default function LanguageSwitcher() {
     const locale = useLocale();
-    const router = useRouter();
     const pathname = usePathname();
 
     const toggleLocale = () => {
         const nextLocale = locale === 'en' ? 'es' : 'en';
-        console.log('Switching to locale:', nextLocale);
-        router.replace(pathname, { locale: nextLocale });
+
+        // Remove current locale prefix from pathname
+        const pathnameWithoutLocale = pathname.replace(`/${locale}`, '') || '/';
+
+        // Build new path with new locale
+        const newPath = `/${nextLocale}${pathnameWithoutLocale}`;
+
+        // Use window.location to force a full page reload
+        // This ensures all components re-mount and fetch new translations
+        window.location.href = newPath;
     };
 
     return (

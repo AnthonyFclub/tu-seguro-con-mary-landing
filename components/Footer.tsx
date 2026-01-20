@@ -18,7 +18,7 @@ export default function Footer() {
 
                     {/* Column 1: Branding (Spans 4) */}
                     <div className="lg:col-span-4 space-y-8">
-                        <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-12">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 lg:gap-2">
                             {/* House/Family Icon - Resized for perfect balance with text */}
                             <div className="relative w-20 h-20 lg:w-24 lg:h-24 shrink-0">
                                 <Image

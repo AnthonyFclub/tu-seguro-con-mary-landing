@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from 'next-intl';
 import { CheckCircle2, MessageCircle, Facebook, Instagram, Mail } from 'lucide-react';
 import { Link } from '@/navigation';

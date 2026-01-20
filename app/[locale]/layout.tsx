@@ -25,7 +25,7 @@ export default async function RootLayout(props: any) {
     // Validate that the incoming `locale` parameter is valid
     if (!routing.locales.includes(locale as any)) notFound();
 
-    const messages = await getMessages();
+    const messages = await getMessages({ locale });
 
     return (
         <html lang={locale} className={`scroll-smooth ${inter.variable} ${cormorant.variable} ${greatVibes.variable} ${alice.variable} ${birthstone.variable} ${montserrat.variable}`}>
