@@ -10,20 +10,20 @@ export default function Services() {
     const services = [
         {
             id: 'health',
-            icon: <HeartPulse className="w-8 h-8 text-pink-500" />,
+            icon: <HeartPulse className="w-8 h-8 text-white drop-shadow-md" />,
             title: t('health.title'),
             items: t.raw('health.items') as string[],
             borderColor: 'border-pink-500',
-            bgColor: 'bg-pink-50/30',
+            bgColor: 'bg-gradient-to-br from-[#B8860B] via-[#DAA520] to-[#B8860B]',
             bgImage: '/images/service-bg-health-hispanic.png'
         },
         {
             id: 'legacy',
-            icon: <Shield className="w-8 h-8 text-brand-blue" />,
+            icon: <Shield className="w-8 h-8 text-white drop-shadow-md" />,
             title: t('legacy.title'),
             items: t.raw('legacy.items') as string[],
             borderColor: 'border-brand-blue',
-            bgColor: 'bg-brand-blue/10',
+            bgColor: 'bg-gradient-to-br from-[#B8860B] via-[#DAA520] to-[#B8860B]',
             bgImage: '/images/service-bg-legacy-hispanic.png'
         },
     ];
@@ -65,19 +65,19 @@ export default function Services() {
                             </div>
 
                             <div className="relative z-10 flex flex-col items-center w-full">
-                                <div className={`w-20 h-20 ${service.bgColor} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-inner border border-white/40 backdrop-blur-sm`}>
+                                <div className={`w-20 h-20 ${service.bgColor} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-all shadow-[0_10px_20px_rgba(184,134,11,0.3)] group-hover:shadow-[0_15px_30px_rgba(184,134,11,0.4)] border border-white/40 backdrop-blur-sm`}>
                                     {service.icon}
                                 </div>
 
                                 <h3 className="text-3xl lg:text-4xl font-extrabold text-brand-dark-blue mb-2 font-serif drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
                                     {service.title}
                                 </h3>
-                                <div className={`w-12 h-1 rounded-full ${service.id === 'health' ? 'bg-pink-500' : 'bg-brand-blue'} mb-8 opacity-60`} />
+                                <div className="w-12 h-1 rounded-full bg-brand-gold mb-8 opacity-60" />
 
                                 <ul className="space-y-5 w-full">
                                     {service.items.map((item, idx) => (
                                         <li key={idx} className="flex items-center gap-3 text-brand-dark-blue font-bold justify-center text-lg lg:text-xl drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] group/item">
-                                            <div className={`w-2 h-2 rounded-full flex-shrink-0 shadow-sm transition-transform group-hover/item:scale-125 ${service.id === 'health' ? 'bg-pink-500/80' : 'bg-brand-blue/80'}`} />
+                                            <div className="w-2 h-2 rounded-full flex-shrink-0 bg-brand-gold shadow-sm transition-transform group-hover/item:scale-125" />
                                             <span className="leading-tight">{item}</span>
                                         </li>
                                     ))}
