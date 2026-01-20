@@ -37,10 +37,10 @@ export default function Hero() {
         >
             {/* Background Image - Using standard CSS background to avoid Next.js Image fill zooming if resolution is an issue */}
             <div className="container mx-auto px-4 pt-24 pb-8 lg:pt-32 lg:pb-12 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-                    {/* Column Left: Content - Unified in a Glass Panel */}
-                    <div className="lg:col-span-7 animate-in fade-in slide-in-from-left duration-1000">
+                    {/* Intro Content (Title & Description) - Order 1 on Mobile */}
+                    <div className="lg:col-span-7 order-1 animate-in fade-in slide-in-from-left duration-1000">
                         <div className="space-y-6">
                             <div className="space-y-2">
                                 <h1 className="text-4xl lg:text-7xl text-brand-dark-blue leading-tight font-serif font-extrabold tracking-tight">
@@ -54,42 +54,11 @@ export default function Hero() {
                             <p className="text-lg lg:text-xl text-brand-dark-blue leading-relaxed font-medium">
                                 {t('description')}
                             </p>
-
-                            {/* Stats & Socials - Unified layout for harmony */}
-                            <div className="space-y-8 pt-4">
-                                {/* Stats - Responsive grid */}
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                    {stats.map((stat, i) => (
-                                        <div key={i} className="flex flex-col items-center justify-center text-center gap-2 px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.2)] hover:scale-105 hover:bg-white transition-all duration-300">
-                                            <span className="text-brand-dark-blue p-2 bg-brand-dark-blue/5 rounded-full">{stat.icon}</span>
-                                            <span className="text-xs font-bold text-brand-dark-blue uppercase tracking-wider">{stat.label}</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Quick Socials - Centered or aligned with content */}
-                                <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-brand-dark-blue/5">
-                                    <div className="flex items-center gap-3">
-                                        {socialIcons.map((social, i) => (
-                                            <a
-                                                key={i}
-                                                href={social.href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className={`${social.color} p-2 rounded-full text-white shadow-md hover:scale-110 hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center`}
-                                                title={social.label}
-                                            >
-                                                {social.icon}
-                                            </a>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
-                    {/* Column Right: Image */}
-                    <div className="lg:col-span-5 relative animate-in fade-in zoom-in duration-1000 delay-300">
+                    {/* Image Container - Order 2 on Mobile, Right Column on Desktop */}
+                    <div className="lg:col-span-5 lg:row-span-2 order-2 lg:order-3 relative animate-in fade-in zoom-in duration-1000 delay-300">
                         <div className="relative aspect-[3/4] w-full max-w-[450px] mx-auto group">
                             {/* Decorative Frame */}
                             <div className="absolute inset-0 border-2 border-brand-gold/30 rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
@@ -102,6 +71,39 @@ export default function Hero() {
                                     priority
                                     className="object-cover object-top hover:scale-105 transition-transform duration-700"
                                 />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Stats & Socials - Order 3 on Mobile, Below Intro on Desktop */}
+                    <div className="lg:col-span-7 order-3 lg:order-2 animate-in fade-in slide-in-from-left duration-1000 delay-150">
+                        <div className="space-y-8 pt-4">
+                            {/* Stats - Responsive grid */}
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                {stats.map((stat, i) => (
+                                    <div key={i} className="flex flex-col items-center justify-center text-center gap-2 px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.2)] hover:scale-105 hover:bg-white transition-all duration-300">
+                                        <span className="text-brand-dark-blue p-2 bg-brand-dark-blue/5 rounded-full">{stat.icon}</span>
+                                        <span className="text-xs font-bold text-brand-dark-blue uppercase tracking-wider">{stat.label}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Quick Socials - Centered or aligned with content */}
+                            <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-brand-dark-blue/5">
+                                <div className="flex items-center gap-3">
+                                    {socialIcons.map((social, i) => (
+                                        <a
+                                            key={i}
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`${social.color} p-2 rounded-full text-white shadow-md hover:scale-110 hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center`}
+                                            title={social.label}
+                                        >
+                                            {social.icon}
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
