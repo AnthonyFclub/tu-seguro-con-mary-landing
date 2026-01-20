@@ -5,10 +5,12 @@ import { Link } from '@/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
     const t = useTranslations('Header');
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,6 +18,17 @@ export default function Header() {
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Close menu when resizing to desktop
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setIsMenuOpen(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const navLinks = [
@@ -27,7 +40,7 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMenuOpen
                 ? 'bg-white/70 backdrop-blur-lg shadow-[0_4px_20px_rgba(184,134,11,0.1)] py-0.5'
                 : 'bg-white/40 backdrop-blur-md py-1 shadow-[0_1px_10px_rgba(184,134,11,0.05)]'
                 } border-b border-brand-gold/15`}
@@ -78,13 +91,48 @@ export default function Header() {
                         </Link>
                     </div>
 
-                    {/* Mobile Menu Button (Simplified for now) */}
-                    <button className="lg:hidden p-2 text-gray-600" aria-label="Toggle Menu">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="lg:hidden p-2 text-brand-dark-blue hover:text-brand-gold transition-colors z-[100]"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+                    >
+                        {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </nav>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <div
+                className={`lg:hidden absolute top-[100%] left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-brand-gold/15 transition-all duration-500 overflow-hidden ${isMenuOpen ? 'max-h-[100vh] opacity-100 py-10 shadow-2xl' : 'max-h-0 opacity-0 py-0'
+                    }`}
+            >
+                <div className="container mx-auto px-8 flex flex-col gap-8">
+                    {navLinks.map((item) => (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-xl font-bold font-alice text-brand-dark-blue hover:text-brand-gold transition-all duration-300 text-center"
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+
+                    <div className="h-[1px] w-full bg-brand-gold/10" />
+
+                    <div className="flex justify-center">
+                        <LanguageSwitcher />
+                    </div>
+
+                    <Link
+                        href="#contact"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-8 py-4 rounded-2xl font-bold font-alice text-lg transition-all shadow-xl hover:scale-105 border border-white/20 text-center"
+                    >
+                        {t('cta')}
+                    </Link>
+                </div>
             </div>
         </header>
     );
