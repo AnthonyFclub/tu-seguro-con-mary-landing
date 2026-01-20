@@ -39,77 +39,30 @@ export default function Hero() {
             <div className="container mx-auto px-4 pt-24 pb-8 lg:pt-32 lg:pb-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-                    {/* Left Side Container for Desktop (Combining Intro and Stats logically) */}
-                    <div className="lg:col-span-7 flex flex-col gap-8 order-1">
-                        {/* Intro Content (Title & Description) */}
-                        <div className="animate-in fade-in slide-in-from-left duration-1000">
-                            <div className="space-y-6">
-                                <div className="space-y-2">
-                                    <h1 className="text-4xl lg:text-7xl text-brand-dark-blue leading-tight font-serif font-extrabold tracking-tight">
-                                        {t('headline')}
-                                    </h1>
-                                    <h2 className="text-xl lg:text-3xl font-bold text-brand-dark-blue/90 font-alice">
-                                        {t('subheadline')}
-                                    </h2>
-                                </div>
-
-                                <p className="text-lg lg:text-xl text-brand-dark-blue leading-relaxed font-medium">
-                                    {t('description')}
-                                </p>
+                    {/* 1. Intro Content - Order 1 on Mobile, Order 2 on Desktop (Right Side) */}
+                    <div className="lg:col-span-7 order-1 lg:order-2 animate-in fade-in slide-in-from-right duration-1000">
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <h1 className="text-4xl lg:text-7xl text-brand-dark-blue leading-tight font-serif font-extrabold tracking-tight">
+                                    {t('headline')}
+                                </h1>
+                                <h2 className="text-xl lg:text-3xl font-bold text-brand-dark-blue/90 font-alice">
+                                    {t('subheadline')}
+                                </h2>
                             </div>
-                        </div>
 
-                        {/* Image Container - ONLY VISIBLE ON MOBILE BETWEEN TEXT AND STATS */}
-                        <div className="lg:hidden order-2 relative animate-in fade-in zoom-in duration-1000 delay-300">
-                            <div className="relative aspect-[3/4] w-full max-w-[400px] mx-auto group">
-                                <div className="absolute inset-0 border-2 border-brand-gold/30 rounded-[2rem] translate-x-3 translate-y-3" />
-                                <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-xl border-4 border-white">
-                                    <Image
-                                        src="/images/mary-carmen.jpg"
-                                        alt={t('imageAlt')}
-                                        fill
-                                        priority
-                                        className="object-cover object-top"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Stats & Socials - Order 3 on Mobile */}
-                        <div className="animate-in fade-in slide-in-from-left duration-1000 delay-150 order-3">
-                            <div className="space-y-8 pt-4">
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                    {stats.map((stat, i) => (
-                                        <div key={i} className="flex flex-col items-center justify-center text-center gap-2 px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.2)] hover:scale-105 hover:bg-white transition-all duration-300">
-                                            <span className="text-brand-dark-blue p-2 bg-brand-dark-blue/5 rounded-full">{stat.icon}</span>
-                                            <span className="text-xs font-bold text-brand-dark-blue uppercase tracking-wider">{stat.label}</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-brand-dark-blue/5">
-                                    <div className="flex items-center gap-3">
-                                        {socialIcons.map((social, i) => (
-                                            <a
-                                                key={i}
-                                                href={social.href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className={`${social.color} p-2 rounded-full text-white shadow-md hover:scale-110 transition-all flex items-center justify-center`}
-                                            >
-                                                {social.icon}
-                                            </a>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+                            <p className="text-lg lg:text-xl text-brand-dark-blue leading-relaxed font-medium">
+                                {t('description')}
+                            </p>
                         </div>
                     </div>
 
-                    {/* Right Side Image - ONLY VISIBLE ON DESKTOP Centered in the whole block */}
-                    <div className="hidden lg:block lg:col-span-5 relative animate-in fade-in zoom-in duration-1000 delay-300">
+                    {/* 2. Photo Container - Order 2 on Mobile, Order 1 on Desktop (Left Side) */}
+                    <div className="lg:col-span-5 lg:row-span-2 order-2 lg:order-1 relative animate-in fade-in zoom-in duration-1000 delay-300">
                         <div className="relative aspect-[3/4] w-full max-w-[450px] mx-auto group">
+                            {/* Decorative Frame */}
                             <div className="absolute inset-0 border-2 border-brand-gold/30 rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
+
                             <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-[0_0_50px_rgba(184,134,11,0.3)] border-4 border-white">
                                 <Image
                                     src="/images/mary-carmen.jpg"
@@ -118,6 +71,39 @@ export default function Hero() {
                                     priority
                                     className="object-cover object-top hover:scale-105 transition-transform duration-700"
                                 />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 3. Stats & Socials - Order 3 on Mobile & Desktop (Below Intro on desktop) */}
+                    <div className="lg:col-span-7 order-3 animate-in fade-in slide-in-from-right duration-1000 delay-150">
+                        <div className="space-y-8 pt-4">
+                            {/* Stats */}
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                {stats.map((stat, i) => (
+                                    <div key={i} className="flex flex-col items-center justify-center text-center gap-2 px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.2)] hover:scale-105 hover:bg-white transition-all duration-300">
+                                        <span className="text-brand-dark-blue p-2 bg-brand-dark-blue/5 rounded-full">{stat.icon}</span>
+                                        <span className="text-xs font-bold text-brand-dark-blue uppercase tracking-wider">{stat.label}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Socials */}
+                            <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-brand-dark-blue/5">
+                                <div className="flex items-center gap-3">
+                                    {socialIcons.map((social, i) => (
+                                        <a
+                                            key={i}
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`${social.color} p-2 rounded-full text-white shadow-md hover:scale-110 hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center`}
+                                            title={social.label}
+                                        >
+                                            {social.icon}
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
