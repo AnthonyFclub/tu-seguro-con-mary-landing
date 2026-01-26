@@ -116,12 +116,12 @@ export async function POST(request: NextRequest) {
 
         // 3. Send emails to both Mary and Marco
         console.log('📧 Attempting to send emails...');
-        const fromEmail = process.env.RESEND_FROM_EMAIL || 'Tu Seguro con Mary <onboarding@resend.dev>';
+        const fromEmail = 'Tu Seguro con Mary <noreply@tuseguroconmary.net>';
 
         try {
             const emailResult = await resend.emails.send({
                 from: fromEmail,
-                to: ['anthony@frutero.club'],
+                to: ['agentmary1997@gmail.com', 'anthony@frutero.club'],
                 subject: `🚀 Nueva Consulta - ${name}`,
                 html: emailHtml,
             });
