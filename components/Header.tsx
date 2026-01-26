@@ -85,7 +85,7 @@ export default function Header() {
 
                         <Link
                             href="#contact"
-                            className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-6 py-2 rounded-xl font-bold font-alice text-sm transition-all shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_25px_rgba(184,134,11,0.5)] hover:scale-105 border border-white/20"
+                            className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-6 py-2 rounded-xl font-bold font-alice text-sm transition-all shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_25px_rgba(184,134,11,0.5)] hover:scale-105 border border-white/20 animate-breathe"
                         >
                             {t('cta')}
                         </Link>
@@ -128,7 +128,7 @@ export default function Header() {
                     <Link
                         href="#contact"
                         onClick={() => setIsMenuOpen(false)}
-                        className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-8 py-4 rounded-2xl font-bold font-alice text-lg transition-all shadow-xl hover:scale-105 border border-white/20 text-center"
+                        className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-8 py-4 rounded-2xl font-bold font-alice text-lg transition-all shadow-xl hover:scale-105 border border-white/20 text-center animate-breathe"
                     >
                         {t('cta')}
                     </Link>

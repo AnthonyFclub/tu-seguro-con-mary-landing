@@ -19,6 +19,24 @@
   --color-brand-dark-blue: #0b2454;
   --color-brand-gold: #b8860b;
   --color-brand-cream: #fdfbf7;
+
+  @keyframes breathe {
+
+    0%,
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 20px rgba(184, 134, 11, 0.1);
+      filter: brightness(1);
+    }
+
+    50% {
+      transform: scale(1.02);
+      box-shadow: 0 0 45px rgba(184, 134, 11, 0.45);
+      filter: brightness(1.15);
+    }
+  }
+
+  --animate-breathe: breathe 4s ease-in-out infinite;
 }
 
 @media (prefers-color-scheme: dark) {

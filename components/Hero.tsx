@@ -79,11 +79,15 @@ export default function Hero() {
                     <div className="lg:col-span-7 order-3 animate-in fade-in slide-in-from-right duration-1000 delay-150">
                         <div className="space-y-8 pt-4">
                             {/* Stats */}
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                                 {stats.map((stat, i) => (
-                                    <div key={i} className="flex flex-col items-center justify-center text-center gap-2 px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-dark-blue/5 hover:shadow-[0_0_20px_rgba(184,134,11,0.2)] hover:scale-105 hover:bg-white transition-all duration-300">
-                                        <span className="text-brand-dark-blue p-2 bg-brand-dark-blue/5 rounded-full">{stat.icon}</span>
-                                        <span className="text-xs font-bold text-brand-dark-blue uppercase tracking-wider">{stat.label}</span>
+                                    <div
+                                        key={i}
+                                        className="flex flex-col items-center justify-center text-center gap-3 px-6 py-8 bg-white backdrop-blur-md rounded-2xl shadow-lg border border-brand-gold/10 hover:shadow-brand-gold/30 hover:scale-105 transition-all duration-500 animate-breathe"
+                                        style={{ animationDelay: `${i * 0.4}s` }}
+                                    >
+                                        <span className="text-brand-gold p-3 bg-brand-gold/10 rounded-full ring-4 ring-brand-gold/5">{stat.icon}</span>
+                                        <span className="text-xs font-extrabold text-brand-dark-blue uppercase tracking-widest">{stat.label}</span>
                                     </div>
                                 ))}
                             </div>
