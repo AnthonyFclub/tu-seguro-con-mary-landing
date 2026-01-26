@@ -35,7 +35,6 @@ export default function Header() {
         { href: '#about', label: t('nav.about') },
         { href: '#services', label: t('nav.services') },
         { href: '#testimonials', label: t('nav.testimonials') },
-        { href: '#contact', label: t('nav.contact') },
     ];
 
     return (
@@ -85,7 +84,7 @@ export default function Header() {
 
                         <Link
                             href="#contact"
-                            className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-6 py-2 rounded-xl font-bold font-alice text-sm transition-all shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_25px_rgba(184,134,11,0.5)] hover:scale-105 border border-white/20 animate-breathe"
+                            className="bg-gradient-to-br from-[#2a5298] via-[#0b2454] to-[#1e3c72] hover:from-[#1e3c72] hover:to-[#2a5298] text-white px-7 py-2.5 rounded-xl font-bold font-alice text-sm transition-all shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_25px_rgba(184,134,11,0.5)] hover:scale-105 border-t border-white/30 border-l border-white/20 shadow-inner animate-breathe"
                         >
                             {t('cta')}
                         </Link>
@@ -128,7 +127,7 @@ export default function Header() {
                     <Link
                         href="#contact"
                         onClick={() => setIsMenuOpen(false)}
-                        className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-white px-8 py-4 rounded-2xl font-bold font-alice text-lg transition-all shadow-xl hover:scale-105 border border-white/20 text-center animate-breathe"
+                        className="bg-gradient-to-br from-[#2a5298] via-[#0b2454] to-[#1e3c72] hover:from-[#1e3c72] hover:to-[#2a5298] text-white px-8 py-4 rounded-2xl font-bold font-alice text-lg transition-all shadow-xl hover:scale-105 border-t border-white/30 border-l border-white/20 text-center animate-breathe"
                     >
                         {t('cta')}
                     </Link>
