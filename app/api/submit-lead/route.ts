@@ -6,21 +6,35 @@ import { createClient } from '@supabase/supabase-js';
 const getResendClient = () => {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
-        console.warn('⚠️ RESEND_API_KEY is missing');
+        console.error('❌ CRITICAL: RESEND_API_KEY is missing from environment variables');
         return null;
     }
-    return new Resend(apiKey);
+    try {
+        return new Resend(apiKey);
+    } catch (e) {
+        console.error('❌ Error initializing Resend client:', e);
+        return null;
+    }
 };
 
 const getSupabaseClient = () => {
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY;
 
     if (!supabaseUrl || !supabaseServiceKey) {
-        console.warn('⚠️ Supabase credentials missing');
+        const missing = [];
+        if (!supabaseUrl) missing.push('URL');
+        if (!supabaseServiceKey) missing.push('Service Key');
+        console.error(`❌ CRITICAL: Supabase ${missing.join(' and ')} missing (Check NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY)`);
         return null;
     }
-    return createClient(supabaseUrl, supabaseServiceKey);
+
+    try {
+        return createClient(supabaseUrl, supabaseServiceKey);
+    } catch (e) {
+        console.error('❌ Error initializing Supabase client:', e);
+        return null;
+    }
 };
 
 export async function POST(request: NextRequest) {
@@ -29,9 +43,17 @@ export async function POST(request: NextRequest) {
 
     try {
         if (!resend || !supabase) {
-            console.error('❌ Missing environment variables');
+            const missing = [];
+            if (!resend) missing.push('Resend');
+            if (!supabase) missing.push('Supabase');
+
+            console.error(`❌ Request blocked: ${missing.join(' and ')} clients failed to initialize. Check Vercel environment variables.`);
+
             return NextResponse.json(
-                { error: 'Configuración del servidor incompleta (Variables de entorno)' },
+                {
+                    error: 'Configuración del servidor incompleta',
+                    details: `Variables faltantes: ${missing.join(', ')}`
+                },
                 { status: 500 }
             );
         }
