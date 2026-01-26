@@ -47,13 +47,20 @@ export default function Testimonials() {
                     {testimonials.map((item, i) => (
                         <div
                             key={i}
-                            className="bg-white/35 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/30 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1),0_0_30px_rgba(184,134,11,0.1)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.15),0_0_50px_rgba(184,134,11,0.2)] transition-all duration-500 hover:scale-[1.03] flex flex-col justify-between group"
+                            className="relative group bg-white/40 backdrop-blur-xl p-8 rounded-[2.5rem] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1),0_0_30px_rgba(184,134,11,0.08)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.15),0_0_50px_rgba(184,134,11,0.15)] transition-all duration-500 hover:scale-[1.03] flex flex-col justify-between overflow-hidden"
                         >
-                            <div>
-                                {/* Brand Gold Stars */}
+                            {/* Metallic Gold Frame Border */}
+                            <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#b8860b] via-[#f7e08a] to-[#d4af37] opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none [mask-image:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] [mask-composite:exclude] p-[2px]" />
+
+                            <div className="relative z-10">
+                                {/* Metallic Gold Stars */}
                                 <div className="flex gap-1 mb-6">
                                     {[...Array(5)].map((_, idx) => (
-                                        <Star key={idx} className="w-5 h-5 text-brand-gold fill-brand-gold drop-shadow-sm" />
+                                        <Star
+                                            key={idx}
+                                            className="w-5 h-5 text-brand-gold fill-brand-gold drop-shadow-[0_1px_3px_rgba(184,134,11,0.4)] transition-transform group-hover:scale-110"
+                                            style={{ filter: "drop-shadow(0 0 2px rgba(184,134,11,0.3))" }}
+                                        />
                                     ))}
                                 </div>
 
@@ -62,13 +69,13 @@ export default function Testimonials() {
                                 </blockquote>
                             </div>
 
-                            <div className="flex items-center gap-4 border-t border-white/20 pt-6">
-                                <div className="w-14 h-14 rounded-full bg-brand-blue flex items-center justify-center text-white font-bold text-xl shadow-xl group-hover:scale-110 transition-transform">
+                            <div className="flex items-center gap-4 border-t border-white/20 pt-6 relative z-10">
+                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#2a5298] via-[#0b2454] to-[#1e3c72] flex items-center justify-center text-white font-bold text-xl shadow-xl border border-white/20 group-hover:scale-110 transition-transform">
                                     {i === 2 ? 'G' : item.avatar}
                                 </div>
                                 <div>
                                     <p className="font-extrabold text-slate-900 text-lg drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">{item.name}</p>
-                                    <p className="text-sm lg:text-base text-brand-blue font-bold opacity-90">{item.detail}</p>
+                                    <p className="text-sm lg:text-base text-brand-dark-blue font-bold opacity-90">{item.detail}</p>
                                 </div>
                             </div>
                         </div>
