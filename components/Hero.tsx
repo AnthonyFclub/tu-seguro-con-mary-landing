@@ -4,6 +4,8 @@ import { useTranslations } from 'next-intl';
 import { CheckCircle2, MessageCircle, Facebook, Instagram, Mail } from 'lucide-react';
 import { Link } from '@/navigation';
 import Image from 'next/image';
+import { ScrollReveal } from './ScrollReveal';
+
 export default function Hero() {
     const t = useTranslations('Hero');
 
@@ -35,82 +37,86 @@ export default function Hero() {
             id="about"
             className="relative min-h-screen flex items-center overflow-hidden bg-brand-cream"
         >
-            {/* Background Image - Using standard CSS background to avoid Next.js Image fill zooming if resolution is an issue */}
             <div className="container mx-auto px-4 pt-24 pb-8 lg:pt-32 lg:pb-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-                    {/* 1. Intro Content - Order 1 on Mobile, Order 2 on Desktop (Right Side) */}
-                    <div className="lg:col-span-7 order-1 lg:order-2 animate-in fade-in slide-in-from-right duration-1000">
-                        <div className="space-y-6">
-                            <div className="space-y-2">
-                                <h1 className="text-4xl lg:text-7xl text-brand-dark-blue leading-tight font-serif font-extrabold tracking-tight">
-                                    {t('headline')}
-                                </h1>
-                                <h2 className="text-xl lg:text-3xl font-bold text-brand-dark-blue/90 font-alice">
-                                    {t('subheadline')}
-                                </h2>
-                            </div>
+                    {/* 1. Intro Content */}
+                    <div className="lg:col-span-7 order-1 lg:order-2">
+                        <ScrollReveal direction="right" duration={0.8}>
+                            <div className="space-y-6">
+                                <div className="space-y-2">
+                                    <h1 className="text-4xl lg:text-7xl text-brand-dark-blue leading-tight font-serif font-extrabold tracking-tight">
+                                        {t('headline')}
+                                    </h1>
+                                    <h2 className="text-xl lg:text-3xl font-bold text-brand-dark-blue/90 font-alice">
+                                        {t('subheadline')}
+                                    </h2>
+                                </div>
 
-                            <p className="text-lg lg:text-xl text-brand-dark-blue leading-relaxed font-medium">
-                                {t('description')}
-                            </p>
-                        </div>
+                                <p className="text-lg lg:text-xl text-brand-dark-blue leading-relaxed font-medium">
+                                    {t('description')}
+                                </p>
+                            </div>
+                        </ScrollReveal>
                     </div>
 
-                    {/* 2. Photo Container - Order 2 on Mobile, Order 1 on Desktop (Left Side) */}
-                    <div className="lg:col-span-5 lg:row-span-2 order-2 lg:order-1 relative animate-in fade-in zoom-in duration-1000 delay-300">
-                        <div className="relative aspect-[3/4] w-full max-w-[450px] mx-auto group">
-                            {/* Decorative Frame */}
-                            <div className="absolute inset-0 border-2 border-brand-gold/30 rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
+                    {/* 2. Photo Container */}
+                    <div className="lg:col-span-5 lg:row-span-2 order-2 lg:order-1 relative">
+                        <ScrollReveal direction="up" delay={0.2} duration={1}>
+                            <div className="relative aspect-[3/4] w-full max-w-[450px] mx-auto group">
+                                <div className="absolute inset-0 border-2 border-brand-gold/30 rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500" />
 
-                            <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-[0_0_50px_rgba(184,134,11,0.3)] border-4 border-white">
-                                <Image
-                                    src="/images/mary-carmen.jpg"
-                                    alt={t('imageAlt')}
-                                    fill
-                                    priority
-                                    className="object-cover object-top hover:scale-105 transition-transform duration-700"
-                                />
+                                <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 shadow-[0_0_50px_rgba(184,134,11,0.3)] border-4 border-white">
+                                    <Image
+                                        src="/images/mary-carmen.jpg"
+                                        alt={t('imageAlt')}
+                                        fill
+                                        priority
+                                        className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
 
-                    {/* 3. Stats & Socials - Order 3 on Mobile & Desktop (Below Intro on desktop) */}
-                    <div className="lg:col-span-7 order-3 animate-in fade-in slide-in-from-right duration-1000 delay-150">
+                    {/* 3. Stats & Socials */}
+                    <div className="lg:col-span-7 order-3">
                         <div className="space-y-8 pt-4">
                             {/* Stats */}
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                                 {stats.map((stat, i) => (
-                                    <div
-                                        key={i}
-                                        className="flex flex-col items-center justify-center text-center gap-3 px-6 py-8 bg-white backdrop-blur-md rounded-2xl shadow-lg border border-brand-gold/10 hover:shadow-brand-gold/30 hover:scale-105 transition-all duration-500 animate-breathe"
-                                        style={{ animationDelay: `${i * 0.4}s` }}
-                                    >
-                                        <span className="text-brand-gold p-3 bg-brand-gold/10 rounded-full ring-4 ring-brand-gold/5">{stat.icon}</span>
-                                        <span className="text-xs font-extrabold text-brand-dark-blue uppercase tracking-widest">{stat.label}</span>
-                                    </div>
+                                    <ScrollReveal key={i} delay={0.4 + (i * 0.1)} direction="up">
+                                        <div
+                                            className="flex flex-col items-center justify-center text-center gap-3 px-6 py-8 bg-white backdrop-blur-md rounded-2xl shadow-lg border border-brand-gold/10 hover:shadow-brand-gold/30 hover:scale-105 transition-all duration-500 animate-breathe"
+                                            style={{ animationDelay: `${i * 0.4}s` }}
+                                        >
+                                            <span className="text-brand-gold p-3 bg-brand-gold/10 rounded-full ring-4 ring-brand-gold/5">{stat.icon}</span>
+                                            <span className="text-xs font-extrabold text-brand-dark-blue uppercase tracking-widest">{stat.label}</span>
+                                        </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
 
                             {/* Socials */}
-                            <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-brand-dark-blue/5">
-                                <div className="flex items-center gap-3">
-                                    {socialIcons.map((social, i) => (
-                                        <a
-                                            key={i}
-                                            href={social.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={`${social.color} p-2 lg:p-2.5 rounded-full text-white shadow-lg hover:scale-110 hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center border-2 border-transparent bg-clip-padding relative group/social`}
-                                            title={social.label}
-                                        >
-                                            {/* Golden Metallic Border Inner */}
-                                            <div className="absolute -inset-[2px] rounded-full bg-gradient-to-br from-[#d4af37] via-[#f7e08a] to-[#b8860b] -z-10 opacity-70 group-hover/social:opacity-100 transition-opacity" />
-                                            {social.icon}
-                                        </a>
-                                    ))}
+                            <ScrollReveal delay={0.6} direction="up">
+                                <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-brand-dark-blue/5">
+                                    <div className="flex items-center gap-3">
+                                        {socialIcons.map((social, i) => (
+                                            <a
+                                                key={i}
+                                                href={social.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`${social.color} p-2 lg:p-2.5 rounded-full text-white shadow-lg hover:scale-110 hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center border-2 border-transparent bg-clip-padding relative group/social`}
+                                                title={social.label}
+                                            >
+                                                <div className="absolute -inset-[2px] rounded-full bg-gradient-to-br from-[#d4af37] via-[#f7e08a] to-[#b8860b] -z-10 opacity-70 group-hover/social:opacity-100 transition-opacity" />
+                                                {social.icon}
+                                            </a>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            </ScrollReveal>
                         </div>
                     </div>
 
