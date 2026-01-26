@@ -37,7 +37,7 @@ export default function Testimonials() {
                     <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-dark-blue leading-tight font-serif drop-shadow-[0_2px_2px_rgba(255,255,255,0.7)]">
                         {t('title')}
                     </h2>
-                    <div className="w-24 h-0.5 bg-brand-gold/40 mx-auto rounded-full shadow-[0_0_10px_rgba(184,134,11,0.2)]" />
+                    <div className="w-48 lg:w-64 h-[3px] bg-gradient-to-r from-[#b8860b] via-[#f7e08a] via-[#d4af37] via-[#f7e08a] to-[#b8860b] mx-auto rounded-full shadow-[0_2px_15px_rgba(184,134,11,0.3)]" />
                     <p className="text-lg lg:text-xl text-brand-dark-blue font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
                         {t('subtitle')}
                     </p>

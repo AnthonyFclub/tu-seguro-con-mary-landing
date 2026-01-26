@@ -19,6 +19,7 @@
   --color-brand-dark-blue: #0b2454;
   --color-brand-gold: #b8860b;
   --color-brand-cream: #fdfbf7;
+  --bg-metallic-gold: linear-gradient(to right, #b8860b, #f7e08a, #d4af37, #f7e08a, #b8860b);
 
   @keyframes breathe {
 
